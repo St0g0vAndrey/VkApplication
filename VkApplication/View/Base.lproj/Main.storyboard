@@ -82,14 +82,12 @@
                                     <constraint firstItem="8VZ-Hv-4jp" firstAttribute="leading" secondItem="TRC-n7-9FM" secondAttribute="leading" constant="50" id="4Uk-mt-Ipp"/>
                                     <constraint firstItem="neA-rK-rDs" firstAttribute="top" secondItem="TRC-n7-9FM" secondAttribute="top" constant="60" id="4dc-3x-7Tb"/>
                                     <constraint firstAttribute="trailing" secondItem="neA-rK-rDs" secondAttribute="trailing" constant="20" id="5Q1-z5-jHu"/>
-                                    <constraint firstItem="MBI-y5-STh" firstAttribute="trailing" secondItem="ABx-SE-3A2" secondAttribute="trailing" constant="40" id="Jfd-Xx-QxI"/>
-                                    <constraint firstItem="ABx-SE-3A2" firstAttribute="leading" secondItem="MBI-y5-STh" secondAttribute="leading" constant="40" id="NaR-QR-xyU"/>
                                     <constraint firstItem="ABx-SE-3A2" firstAttribute="top" secondItem="8VZ-Hv-4jp" secondAttribute="bottom" constant="40" id="O1p-xL-ZB7"/>
                                     <constraint firstAttribute="bottom" secondItem="neA-rK-rDs" secondAttribute="bottom" constant="50" id="RiP-tv-EbO"/>
-                                    <constraint firstItem="ABx-SE-3A2" firstAttribute="width" secondItem="TRC-n7-9FM" secondAttribute="width" multiplier="0.806763" id="fmJ-25-bnG"/>
                                     <constraint firstItem="8VZ-Hv-4jp" firstAttribute="centerX" secondItem="TRC-n7-9FM" secondAttribute="centerX" id="gC2-zl-R3c"/>
-                                    <constraint firstItem="ABx-SE-3A2" firstAttribute="trailing" secondItem="TRC-n7-9FM" secondAttribute="centerX" id="oOB-cT-OhB"/>
+                                    <constraint firstItem="ABx-SE-3A2" firstAttribute="leading" secondItem="MBI-y5-STh" secondAttribute="leading" constant="40" id="lge-wv-aJF"/>
                                     <constraint firstItem="neA-rK-rDs" firstAttribute="centerX" secondItem="TRC-n7-9FM" secondAttribute="centerX" id="rHb-wN-UGe"/>
+                                    <constraint firstItem="MBI-y5-STh" firstAttribute="trailing" secondItem="ABx-SE-3A2" secondAttribute="trailing" constant="40" id="vlV-Cw-mxf"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Y6m-FN-Go7"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="MBI-y5-STh"/>
@@ -112,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-530" y="-146"/>
+            <point key="canvasLocation" x="-530.43478260869574" y="-146.65178571428569"/>
         </scene>
     </scenes>
     <resources>
