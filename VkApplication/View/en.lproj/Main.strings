@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "My Applications"; ObjectID = "3fD-Gy-GSk"; */
+"3fD-Gy-GSk.text" = "My Applications";
+
+/* Class = "UILabel"; text = "Password:"; ObjectID = "Bjo-p0-WRD"; */
+"Bjo-p0-WRD.text" = "Password:";
+
+/* Class = "UITextField"; placeholder = "User Name Text"; ObjectID = "b8w-Ri-EBM"; */
+"b8w-Ri-EBM.placeholder" = "User Name Text";
+
+/* Class = "UITextField"; placeholder = "Password Text"; ObjectID = "oPi-UA-6tJ"; */
+"oPi-UA-6tJ.placeholder" = "Password Text";
+
+/* Class = "UILabel"; text = "User:"; ObjectID = "pMF-Hn-SZC"; */
+"pMF-Hn-SZC.text" = "User:";
+
+/* Class = "UIButton"; configuration.title = "Come in"; ObjectID = "qT9-Bs-chA"; */
+"qT9-Bs-chA.configuration.title" = "Come in";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "qT9-Bs-chA"; */
+"qT9-Bs-chA.normalTitle" = "Button";
