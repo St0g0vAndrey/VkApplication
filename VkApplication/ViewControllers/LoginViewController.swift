@@ -11,12 +11,13 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var PasswTextField: UITextField!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBAction func LoginProcess(_ sender: Any) {
         print(userTextField.text)
         print(PasswTextField.text)
     }
+    
+    
     
     
     override func viewDidLoad() {
@@ -26,7 +27,6 @@ class LoginViewController: UIViewController {
                 UITapGestureRecognizer(
                     target: self,
                     action: #selector(hideKeyboard)))
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
