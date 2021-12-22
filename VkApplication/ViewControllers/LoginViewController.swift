@@ -12,14 +12,14 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var PasswTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBAction func LoginProcess(_ sender: Any) {
-        print(userTextField.text)
-        print(PasswTextField.text)
+      
     }
     
     
     
-    
+    // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView
@@ -63,6 +63,7 @@ class LoginViewController: UIViewController {
             object: nil)
     }
     
+    //MARK: - Action
     @objc func keyboardWasShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue)
@@ -100,6 +101,36 @@ class LoginViewController: UIViewController {
     @objc func hideKeyboard() {
         self.scrollView?.endEditing(true)
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+
+        if !UserProcess() {
+            ErroAlert()
+            return false
+        } else {
+            return true
+        }
+        
+    }
+    
+    // MARK: - Private
+    
+    private func UserProcess () -> Bool {
+        userTextField.text == "admin" && PasswTextField.text == "11111"
+    }
+    
+    private func ErroAlert () {
+        let alertProcess = UIAlertController(title: "Error", message: "Uncorect user name or password", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Close", style: .cancel)
+        alertProcess.addAction(action)
+        self.present(alertProcess, animated: true)
+    }
+    
+    
+    
+    
+    
+    
     
 }
 
