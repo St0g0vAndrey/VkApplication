@@ -16,7 +16,8 @@ class LoginViewController: UIViewController {
     @IBAction func LoginProcess(_ sender: Any) {
       
     }
-    
+    @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
+    }
     
     
     // MARK: - Cycle
@@ -103,13 +104,19 @@ class LoginViewController: UIViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-
-        if !UserProcess() {
-            ErroAlert()
+        switch identifier {
+        case "goToMain":
+            if !UserProcess() {
+                ErroAlert()
+                return false
+            } else {
+                ClearUsers()
+                return true
+            }
+        default:
             return false
-        } else {
-            return true
         }
+        
         
     }
     
@@ -126,7 +133,10 @@ class LoginViewController: UIViewController {
         self.present(alertProcess, animated: true)
     }
     
-    
+    private func ClearUsers () {
+        userTextField.text = ""
+        PasswTextField.text = ""
+    }
     
     
     
