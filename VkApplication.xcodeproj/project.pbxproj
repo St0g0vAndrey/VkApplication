@@ -13,6 +13,10 @@
 		352ADA8E276DCE720009C658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA8C276DCE720009C658 /* Main.storyboard */; };
 		352ADA90276DCE750009C658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA8F276DCE750009C658 /* Assets.xcassets */; };
 		352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA91276DCE750009C658 /* LaunchScreen.storyboard */; };
+		353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755252779F559002A5CC8 /* MyFreindsTC.swift */; };
+		353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */; };
+		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
+		3537552C2779F6FE002A5CC8 /* SearchGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		352ADA8F276DCE750009C658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352ADA92276DCE750009C658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352ADA94276DCE750009C658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		353755252779F559002A5CC8 /* MyFreindsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFreindsTC.swift; sourceTree = "<group>"; };
+		353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
+		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
+		3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchGroupTableVC.swift; path = VkApplication/ViewControllers/SearchGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,10 @@
 			isa = PBXGroup;
 			children = (
 				352ADA8A276DCE720009C658 /* LoginViewController.swift */,
+				353755252779F559002A5CC8 /* MyFreindsTC.swift */,
+				353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */,
+				3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */,
+				353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,7 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */,
+				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */,
+				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,
+				3537552C2779F6FE002A5CC8 /* SearchGroupTableVC.swift in Sources */,
 				352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */,
 				352ADA89276DCE720009C658 /* SceneDelegate.swift in Sources */,
 			);
