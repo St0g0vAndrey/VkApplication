@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35023B16278178740012582B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35023B14278178740012582B /* GroupCell.swift */; };
+		35023B17278178740012582B /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35023B15278178740012582B /* GroupCell.xib */; };
 		352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ADA86276DCE720009C658 /* AppDelegate.swift */; };
 		352ADA89276DCE720009C658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ADA88276DCE720009C658 /* SceneDelegate.swift */; };
 		352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ADA8A276DCE720009C658 /* LoginViewController.swift */; };
@@ -16,10 +18,12 @@
 		353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755252779F559002A5CC8 /* MyFreindsTC.swift */; };
 		353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */; };
 		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
-		3537552C2779F6FE002A5CC8 /* SearchGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */; };
+		3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35023B14278178740012582B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		35023B15278178740012582B /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		352ADA83276DCE720009C658 /* VkApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352ADA86276DCE720009C658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		352ADA88276DCE720009C658 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,7 +35,7 @@
 		353755252779F559002A5CC8 /* MyFreindsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFreindsTC.swift; sourceTree = "<group>"; };
 		353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
 		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
-		3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchGroupTableVC.swift; path = VkApplication/ViewControllers/SearchGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
+		3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllGroupTableVC.swift; path = VkApplication/ViewControllers/AllGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35023B12278177E30012582B /* Resoul Cell */ = {
+			isa = PBXGroup;
+			children = (
+				35023B13278177F50012582B /* Tables */,
+			);
+			path = "Resoul Cell";
+			sourceTree = "<group>";
+		};
+		35023B13278177F50012582B /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				35023B14278178740012582B /* GroupCell.swift */,
+				35023B15278178740012582B /* GroupCell.xib */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
 		352ADA7A276DCE720009C658 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +100,7 @@
 				352ADA8A276DCE720009C658 /* LoginViewController.swift */,
 				353755252779F559002A5CC8 /* MyFreindsTC.swift */,
 				353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */,
-				3537552B2779F6FE002A5CC8 /* SearchGroupTableVC.swift */,
+				3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */,
 				353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */,
 			);
 			path = ViewControllers;
@@ -88,6 +109,7 @@
 		352ADA9B276DDE230009C658 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				35023B12278177E30012582B /* Resoul Cell */,
 				352ADA8C276DCE720009C658 /* Main.storyboard */,
 			);
 			path = View;
@@ -164,6 +186,7 @@
 				352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */,
 				352ADA90276DCE750009C658 /* Assets.xcassets in Resources */,
 				352ADA8E276DCE720009C658 /* Main.storyboard in Resources */,
+				35023B17278178740012582B /* GroupCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,9 +201,10 @@
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */,
 				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,
-				3537552C2779F6FE002A5CC8 /* SearchGroupTableVC.swift in Sources */,
+				3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */,
 				352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */,
 				352ADA89276DCE720009C658 /* SceneDelegate.swift in Sources */,
+				35023B16278178740012582B /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,8 +349,8 @@
 		352ADA98276DCE750009C658 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT63PMVH52;
@@ -354,8 +378,8 @@
 		352ADA99276DCE750009C658 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT63PMVH52;

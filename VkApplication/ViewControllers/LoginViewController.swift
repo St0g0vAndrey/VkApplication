@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var PasswTextField: UITextField!
@@ -123,7 +123,7 @@ class LoginViewController: UIViewController {
     // MARK: - Private
     
     private func UserProcess () -> Bool {
-        userTextField.text == "admin" && PasswTextField.text == "11111"
+        userTextField.text == "" && PasswTextField.text == ""
     }
     
     private func ErroAlert () {

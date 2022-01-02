@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchGroupTableVC: UITableViewController {
+class AllGroupTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
