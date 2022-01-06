@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyGroupsTableVC: UITableViewController {
+final class MyGroupsTableVC: UITableViewController {
   
     // MARK: - Life Cycle
     override func viewDidLoad() {
