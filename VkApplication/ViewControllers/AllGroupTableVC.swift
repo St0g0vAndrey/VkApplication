@@ -7,39 +7,62 @@
 
 import UIKit
 
-class AllGroupTableVC: UITableViewController {
+final class AllGroupTableVC: UITableViewController {
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Colection Image and Group.name
+    var myGroup = [
+        "BarberShop",
+        "Gold Pizza",
+        "Komsomolsk-in-Amure"
+    ]
+    
+    var myImage = [
+    "BarberShop.jpg",
+    "Pizza.jpg",
+    "Kom-in-Amure.jpg"
+    ]
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myImage.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
+        else {
+            return UITableViewCell()
+        }
+        
+        let corentGroup = myGroup[indexPath.row]
+        let corentImage = myImage[indexPath.row]
+        
+        cell.configure(emblem: UIImage(named: corentImage) ?? UIImage(), name: corentGroup)
 
         return cell
     }
-    */
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        performSegue(withIdentifier: "addGroups", sender: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.

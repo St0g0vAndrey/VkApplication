@@ -19,6 +19,8 @@
 		353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */; };
 		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
 		3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */; };
+		35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */; };
+		35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
 		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
 		3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllGroupTableVC.swift; path = VkApplication/ViewControllers/AllGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
+		35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
+		35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		35023B12278177E30012582B /* Resoul Cell */ = {
 			isa = PBXGroup;
 			children = (
+				35EDFC4D2786F09600EE8DAC /* CollectionCell */,
 				35023B13278177F50012582B /* Tables */,
 			);
 			path = "Resoul Cell";
@@ -125,6 +130,15 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		35EDFC4D2786F09600EE8DAC /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */,
+				35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -184,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */,
+				35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */,
 				352ADA90276DCE750009C658 /* Assets.xcassets in Resources */,
 				352ADA8E276DCE720009C658 /* Main.storyboard in Resources */,
 				35023B17278178740012582B /* GroupCell.xib in Resources */,
@@ -200,6 +215,7 @@
 				353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */,
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */,
+				35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */,
 				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,
 				3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */,
 				352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */,

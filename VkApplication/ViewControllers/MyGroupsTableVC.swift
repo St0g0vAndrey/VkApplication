@@ -7,18 +7,29 @@
 
 import UIKit
 
-class MyGroupsTableVC: UITableViewController {
-/*
+final class MyGroupsTableVC: UITableViewController {
+  
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+
     }
-*/
     
-    var myGroup = [
-    "BarberShop",
-    "Gold Pizza",
-    "Komsomolsk-in-Amure"
-    ]
+    var myImage = [String]()
+    var group = [String]()
+    
+    @IBAction func addGroupsSegue(segue: UIStoryboardSegue) {
+        guard segue.identifier == "addGroups",
+              let allGroupController = segue.source as? AllGroupTableVC,
+              let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
+              !self.group.contains(allGroupController.myGroup[groupIndex.row])
+        else { return }
+            self.group.append(allGroupController.myGroup[groupIndex.row])
+            self.myImage.append(allGroupController.myImage[groupIndex.row])
+        tableView.reloadData()
+        
+    }
     
     
     // MARK: - Table view data source
@@ -28,7 +39,7 @@ class MyGroupsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroup.count
+        return group.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,7 +49,10 @@ class MyGroupsTableVC: UITableViewController {
             return UITableViewCell()
         }
         
-        cell.configure(emblem: UIImage(named: "BarberShop.jpg") ?? UIImage(), name: "BarberShop")
+        let corentGroup = group[indexPath.row]
+        let corentImage = myImage[indexPath.row]
+        
+        cell.configure(emblem: UIImage(named: corentImage) ?? UIImage(), name: corentGroup)
 
         return cell
     }
@@ -51,17 +65,12 @@ class MyGroupsTableVC: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            group.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.

@@ -7,39 +7,67 @@
 
 import UIKit
 
-class MyFreindsTC: UITableViewController {
+final class MyFreindsTC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    //MARK: - Collections Image and FIO
+    
+    var myFreindsImage = [
+    "Boy1.jpg",
+    "Woomen1.jpg",
+    "Boy2.jpg",
+    "Woomen2.jpg",
+    "Woomen3.jpg"
+    ]
+    
+    var myFreinds = [
+    "Mark Laletin",
+    "Amanda Vilson",
+    "Rogers Jones",
+    "Ariel Theron",
+    "Jenny Allen"
+    ]
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myFreinds.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
+        else {
+            return UITableViewCell()
+        }
 
-        // Configure the cell...
-
+        let freind = myFreinds[indexPath.row]
+        let freindsImage = myFreindsImage[indexPath.row]
+        
+        cell.configure(emblem: UIImage(named: freindsImage) ?? UIImage(), name: freind)
+        
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        performSegue(withIdentifier: "showPhoto", sender: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
