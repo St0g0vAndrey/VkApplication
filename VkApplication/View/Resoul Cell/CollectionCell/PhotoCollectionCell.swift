@@ -34,6 +34,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
             countLike.text = String(count)
         case false:
             buttonLike.setImage(UIImage(systemName: "heart"), for: .disabled)
+            
         }
     }
     
