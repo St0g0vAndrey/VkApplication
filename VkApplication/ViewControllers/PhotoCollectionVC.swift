@@ -9,6 +9,9 @@ import UIKit
 
 final class PhotoCollectionVC: UICollectionViewController {
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
@@ -38,7 +41,7 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-        cell.configure(photo: UIImage(named: "SnowFreinds"))
+        cell.configure(photo: UIImage(named: "Active5"))
         return cell
     }
 

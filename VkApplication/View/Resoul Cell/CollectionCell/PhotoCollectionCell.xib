@@ -23,12 +23,37 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yWY-E9-PyC">
                                 <rect key="frame" x="10" y="10" width="320" height="171"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-50-SMG">
+                                <rect key="frame" x="275" y="146" width="50" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMh-U4-hWD">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-GQ-LHK">
+                                        <rect key="frame" x="36" y="0.0" width="14" height="30"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TMh-U4-hWD" firstAttribute="width" secondItem="ajY-50-SMG" secondAttribute="height" id="CRG-20-Yt4"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xue-sn-WPV"/>
+                                    <constraint firstAttribute="width" constant="50" id="xXQ-hR-x7h"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yWY-E9-PyC" firstAttribute="top" secondItem="Xsf-L0-0hC" secondAttribute="top" constant="10" id="IjT-V5-zpr"/>
                             <constraint firstAttribute="trailing" secondItem="yWY-E9-PyC" secondAttribute="trailing" constant="10" id="YvE-bL-qbZ"/>
+                            <constraint firstAttribute="bottom" secondItem="ajY-50-SMG" secondAttribute="bottom" constant="15" id="gSL-Dr-nPR"/>
                             <constraint firstAttribute="bottom" secondItem="yWY-E9-PyC" secondAttribute="bottom" constant="10" id="gg9-AQ-2Da"/>
+                            <constraint firstAttribute="trailing" secondItem="ajY-50-SMG" secondAttribute="trailing" constant="15" id="l7Y-2m-UZw"/>
                             <constraint firstItem="yWY-E9-PyC" firstAttribute="leading" secondItem="Xsf-L0-0hC" secondAttribute="leading" constant="10" id="rFd-Zu-EnP"/>
                         </constraints>
                     </view>
@@ -43,14 +68,20 @@
             </constraints>
             <size key="customSize" width="340" height="191"/>
             <connections>
+                <outlet property="buttonLike" destination="TMh-U4-hWD" id="TTn-pJ-MtB"/>
+                <outlet property="countLike" destination="zrb-GQ-LHK" id="G84-Ej-ELe"/>
                 <outlet property="photoCollection" destination="yWY-E9-PyC" id="gy3-we-17A"/>
             </connections>
             <point key="canvasLocation" x="185.50724637681162" y="83.370535714285708"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
