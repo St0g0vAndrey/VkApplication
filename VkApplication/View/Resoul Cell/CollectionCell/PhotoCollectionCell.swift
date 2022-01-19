@@ -18,10 +18,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         configLabel()
         buttonAction()
-        
-        
-        //buttonLike.setImage(UIImage(systemName: "heart.fill"), for: .highlighted)
-        
     }
     
     //MARK: - Init
