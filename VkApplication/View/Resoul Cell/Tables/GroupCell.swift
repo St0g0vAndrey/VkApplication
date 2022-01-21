@@ -11,7 +11,7 @@ final class GroupCell: UITableViewCell {
 
 
     @IBOutlet weak var groupName: UILabel!
-    @IBOutlet weak var groupImage: UIImageView!
+    @IBOutlet weak var groupImage: AvatarImage!
     
     func configure(emblem: UIImage, name: String){
         self.groupImage.image = emblem
