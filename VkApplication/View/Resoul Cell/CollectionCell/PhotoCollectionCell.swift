@@ -25,7 +25,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
         self.photoCollection.image = photo
     }
     
-    
     private func buttonAction() {
         switch buttonLike.isEnabled {
         case true:
