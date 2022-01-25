@@ -18,15 +18,10 @@ final class AllGroupTableVC: UITableViewController {
 
     // MARK: - Colection Image and Group.name
     var myGroup = [
-        "BarberShop",
-        "Gold Pizza",
-        "Komsomolsk-in-Amure"
-    ]
-    
-    var myImage = [
-    "BarberShop.jpg",
-    "Pizza.jpg",
-    "Kom-in-Amure.jpg"
+        GroupModel(groupName: "BarberShop", groupEmblem: "BarberShop.jpg"),
+        GroupModel(groupName: "Gold Pizza", groupEmblem: "Pizza.jpg"),
+        GroupModel(groupName: "Komsomolsk-in-Amure", groupEmblem: "Kom-in-Amure.jpg"),
+        
     ]
     
     
@@ -37,7 +32,7 @@ final class AllGroupTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myImage.count
+        return myGroup.count
     }
 
 
@@ -49,9 +44,8 @@ final class AllGroupTableVC: UITableViewController {
         }
         
         let corentGroup = myGroup[indexPath.row]
-        let corentImage = myImage[indexPath.row]
         
-        cell.configure(emblem: UIImage(named: corentImage) ?? UIImage(), name: corentGroup)
+        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem) ?? UIImage(), name: corentGroup.groupName)
 
         return cell
     }

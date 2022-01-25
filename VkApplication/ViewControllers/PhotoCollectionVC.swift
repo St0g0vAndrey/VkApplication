@@ -9,15 +9,13 @@ import UIKit
 
 final class PhotoCollectionVC: UICollectionViewController {
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
-
     }
 
+    var photoCollection = [UserModel]()
+    
     /*
     // MARK: - Navigation
 
@@ -41,7 +39,9 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-        cell.configure(photo: UIImage(named: "Active5"))
+        let photo = photoCollection[indexPath.row]
+        
+        //cell.configure(photo: UIImage(named: photo.userPhotoCollection))
         return cell
     }
 

@@ -17,22 +17,14 @@ final class MyFreindsTC: UITableViewController {
 
     //MARK: - Collections Image and FIO
     
-    var myFreindsImage = [
-    "Boy1.jpg",
-    "Woomen1.jpg",
-    "Boy2.jpg",
-    "Woomen2.jpg",
-    "Woomen3.jpg"
-    ]
-    
     var myFreinds = [
-    "Mark Laletin",
-    "Amanda Vilson",
-    "Rogers Jones",
-    "Ariel Theron",
-    "Jenny Allen"
+        UserModel(username: "Mark Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
+        UserModel(username: "Jenny Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
+        UserModel(username: "Amanda Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
+        UserModel(username: "Rogers Jones", userPhoto: "", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: "Ariel Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
-    
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +37,6 @@ final class MyFreindsTC: UITableViewController {
         return myFreinds.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
@@ -53,15 +44,18 @@ final class MyFreindsTC: UITableViewController {
             return UITableViewCell()
         }
 
-        let freind = myFreinds[indexPath.row]
-        let freindsImage = myFreindsImage[indexPath.row]
+        let freinds = myFreinds[indexPath.row]
         
-        cell.configure(emblem: UIImage(named: freindsImage) ?? UIImage(), name: freind)
+        if let photo = freinds.userPhoto {
+            cell.configure(emblem: UIImage(named: photo) ?? UIImage(), name: freinds.username)
+        } else {
+            cell.configure(emblem: UIImage(named: "Avatar") ?? UIImage(), name: freinds.username)
+        }
         
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }

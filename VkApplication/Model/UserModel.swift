@@ -9,13 +9,13 @@ import UIKit
 
 class UserModel {
     let username: String
-    let userFamily: String
-    let userPhoto: UIImage
+    let userPhoto: String?
+    let userPhotoCollection: [String]
     
-    init(username: String, userFamily: String, userPhoto: UIImage) {
+    init(username: String, userPhoto: String, userPhotoCollection: [String]) {
         self.username = username
-        self.userFamily = userFamily
         self.userPhoto = userPhoto
+        self.userPhotoCollection = userPhotoCollection
     }
     
     deinit {

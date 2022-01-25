@@ -16,17 +16,15 @@ final class MyGroupsTableVC: UITableViewController {
 
     }
     
-    var myImage = [String]()
-    var group = [String]()
+    var group = [GroupModel]()
     
     @IBAction func addGroupsSegue(segue: UIStoryboardSegue) {
         guard segue.identifier == "addGroups",
               let allGroupController = segue.source as? AllGroupTableVC,
               let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
-              !self.group.contains(allGroupController.myGroup[groupIndex.row])
+              !self.group.contains(where: {$0.groupName == allGroupController.myGroup[groupIndex.row].groupName})
         else { return }
-            self.group.append(allGroupController.myGroup[groupIndex.row])
-            self.myImage.append(allGroupController.myImage[groupIndex.row])
+        self.group.append(allGroupController.myGroup[groupIndex.row])
         tableView.reloadData()
         
     }
@@ -50,9 +48,8 @@ final class MyGroupsTableVC: UITableViewController {
         }
         
         let corentGroup = group[indexPath.row]
-        let corentImage = myImage[indexPath.row]
         
-        cell.configure(emblem: UIImage(named: corentImage) ?? UIImage(), name: corentGroup)
+        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem) ?? UIImage(), name: corentGroup.groupName)
 
         return cell
     }

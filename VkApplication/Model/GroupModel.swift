@@ -8,11 +8,11 @@
 import UIKit
 
 class GroupModel {
-    let groupName: String
-    let groupEmblem: UIImage
+    let groupName: String?
+    let groupEmblem: String
     
     
-    init(groupName: String, groupEmblem: UIImage) {
+    init(groupName: String, groupEmblem: String) {
         self.groupName = groupName
         self.groupEmblem = groupEmblem
     }
