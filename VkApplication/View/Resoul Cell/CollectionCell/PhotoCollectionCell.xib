@@ -11,20 +11,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCollectionCell" id="gTV-IL-0wX" customClass="PhotoCollectionCell" customModule="VkApplication" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="191"/>
+            <rect key="frame" x="0.0" y="0.0" width="248" height="220"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="340" height="191"/>
+                <rect key="frame" x="0.0" y="0.0" width="248" height="220"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-L0-0hC">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="191"/>
+                        <rect key="frame" x="0.0" y="0.0" width="248" height="220"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yWY-E9-PyC">
-                                <rect key="frame" x="10" y="10" width="320" height="171"/>
+                                <rect key="frame" x="10" y="10" width="228" height="200"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-50-SMG">
-                                <rect key="frame" x="275" y="146" width="50" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajY-50-SMG">
+                                <rect key="frame" x="183" y="175" width="50" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TMh-U4-hWD">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -36,7 +36,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrb-GQ-LHK">
-                                        <rect key="frame" x="36" y="0.0" width="14" height="30"/>
+                                        <rect key="frame" x="30" y="0.0" width="20" height="30"/>
                                         <color key="tintColor" systemColor="systemRedColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -69,13 +69,13 @@
                 <constraint firstAttribute="bottom" secondItem="Xsf-L0-0hC" secondAttribute="bottom" id="eQk-eB-Nwx"/>
                 <constraint firstItem="Xsf-L0-0hC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wHL-c9-C9o"/>
             </constraints>
-            <size key="customSize" width="340" height="191"/>
+            <size key="customSize" width="248" height="220"/>
             <connections>
                 <outlet property="buttonLike" destination="TMh-U4-hWD" id="TTn-pJ-MtB"/>
                 <outlet property="countLike" destination="zrb-GQ-LHK" id="G84-Ej-ELe"/>
                 <outlet property="photoCollection" destination="yWY-E9-PyC" id="gy3-we-17A"/>
             </connections>
-            <point key="canvasLocation" x="185.50724637681162" y="83.370535714285708"/>
+            <point key="canvasLocation" x="118.84057971014494" y="93.080357142857139"/>
         </collectionViewCell>
     </objects>
     <resources>

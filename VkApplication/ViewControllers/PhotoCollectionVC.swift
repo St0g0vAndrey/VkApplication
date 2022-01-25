@@ -14,7 +14,13 @@ final class PhotoCollectionVC: UICollectionViewController {
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
     }
 
-    var photoCollection = [UserModel]()
+    var userCollection = [
+        UserModel(username: "Mark Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
+        UserModel(username: "Jenny Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
+        UserModel(username: "Amanda Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
+        UserModel(username: "Rogers Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: "Ariel Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
+    ]
     
     /*
     // MARK: - Navigation
@@ -29,7 +35,7 @@ final class PhotoCollectionVC: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -39,9 +45,12 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-        let photo = photoCollection[indexPath.row]
+        let photo = userCollection[indexPath.row]
         
-        //cell.configure(photo: UIImage(named: photo.userPhotoCollection))
+        for indexUser in 0...photo.userPhotoCollection.count-1 {
+            cell.configure(photo: UIImage(named: photo.userPhotoCollection[indexUser]))
+        }
+        
         return cell
     }
 

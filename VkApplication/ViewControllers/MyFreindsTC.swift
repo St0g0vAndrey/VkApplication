@@ -16,12 +16,11 @@ final class MyFreindsTC: UITableViewController {
     }
 
     //MARK: - Collections Image and FIO
-    
     var myFreinds = [
         UserModel(username: "Mark Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
         UserModel(username: "Jenny Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
         UserModel(username: "Amanda Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: "Rogers Jones", userPhoto: "", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: "Rogers Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
         UserModel(username: "Ariel Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
 
@@ -55,7 +54,7 @@ final class MyFreindsTC: UITableViewController {
         return cell
     }
 
-override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }

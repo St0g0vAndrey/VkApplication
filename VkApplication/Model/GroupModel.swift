@@ -8,7 +8,7 @@
 import UIKit
 
 class GroupModel {
-    let groupName: String?
+    let groupName: String
     let groupEmblem: String
     
     

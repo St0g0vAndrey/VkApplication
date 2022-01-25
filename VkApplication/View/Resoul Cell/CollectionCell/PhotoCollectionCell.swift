@@ -12,7 +12,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
     var numbertLike: Int = 0
     var isLicked: Bool = false
     
-    
     @IBOutlet weak var buttonLike: UIButton!
     @IBOutlet weak var countLike: UILabel!
     @IBOutlet weak var photoCollection: UIImageView!
