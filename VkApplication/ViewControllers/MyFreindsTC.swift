@@ -12,18 +12,20 @@ final class MyFreindsTC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        tableView.register(SomeHeaderFooter.self, forHeaderFooterViewReuseIdentifier: "someHeaderFooter")
 
     }
-
+    
     //MARK: - Collections Image and FIO
-    var myFreinds = [
-        UserModel(username: "Mark Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
-        UserModel(username: "Jenny Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
-        UserModel(username: "Amanda Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: "Rogers Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
-        UserModel(username: "Ariel Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
+    
+    var myFreinds: [UserModel] = [
+        UserModel(username: "Mark", userFamily: "Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
+        UserModel(username: "Jenny", userFamily: "Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
+        UserModel(username: "Amanda", userFamily: "Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
+        UserModel(username: "Rogers", userFamily: "Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: "Ariel", userFamily: "Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
-
+   
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,19 +48,30 @@ final class MyFreindsTC: UITableViewController {
         let freinds = myFreinds[indexPath.row]
         
         if let photo = freinds.userPhoto {
-            cell.configure(emblem: UIImage(named: photo) ?? UIImage(), name: freinds.username)
+            cell.configure(emblem: UIImage(named: photo) ?? UIImage(), name: "\(freinds.username) \(freinds.userFamily)")
         } else {
-            cell.configure(emblem: UIImage(named: "Avatar") ?? UIImage(), name: freinds.username)
+            cell.configure(emblem: UIImage(named: "Avatar") ?? UIImage(), name: "\(freinds.username) \(freinds.userFamily)")
         }
         
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let someView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "someHeaderFooter") as? SomeHeaderFooter else {
+            return UIView()
+        }
+        return someView
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         performSegue(withIdentifier: "showPhoto", sender: nil)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        ["A", "B", "C"]
     }
     
     /*

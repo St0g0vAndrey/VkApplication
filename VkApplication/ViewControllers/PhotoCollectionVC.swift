@@ -15,11 +15,11 @@ final class PhotoCollectionVC: UICollectionViewController {
     }
 
     var userCollection = [
-        UserModel(username: "Mark Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
-        UserModel(username: "Jenny Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
-        UserModel(username: "Amanda Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: "Rogers Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
-        UserModel(username: "Ariel Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
+        UserModel(username: "Mark", userFamily: "Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
+        UserModel(username: "Jenny", userFamily: "Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
+        UserModel(username: "Amanda", userFamily: "Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
+        UserModel(username: "Rogers", userFamily: "Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: "Ariel", userFamily: "Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
     
     /*
@@ -45,10 +45,10 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-        let photo = userCollection[indexPath.row]
+       // let photo = userCollection[indexPath.row]
         
-        for indexUser in 0...photo.userPhotoCollection.count-1 {
-            cell.configure(photo: UIImage(named: photo.userPhotoCollection[indexUser]))
+        for indexUser in 0...userCollection[indexPath.row].userPhotoCollection.count-1 {
+            cell.configure(photo: UIImage(named: userCollection[indexPath.row].userPhotoCollection[indexUser]))
         }
         
         return cell
