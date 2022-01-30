@@ -56,7 +56,6 @@ class NewsNableCell: UITableViewCell {
         
     }
     
-    
     func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: UIImage) {
         self.photoNews.image = photoNews
         self.titleNews.text = titleNews

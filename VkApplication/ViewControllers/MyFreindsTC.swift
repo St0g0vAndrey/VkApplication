@@ -19,11 +19,11 @@ final class MyFreindsTC: UITableViewController {
     //MARK: - Collections Image and FIO
     
     var myFreinds: [UserModel] = [
-        UserModel(username: "Mark", userFamily: "Laletin", userPhoto: "Boy1.jpg", userPhotoCollection: ["Active1","Active2"]),
-        UserModel(username: "Jenny", userFamily: "Allen", userPhoto: "Woomen3.jpg", userPhotoCollection: ["Active3", "Active4"]),
-        UserModel(username: "Amanda", userFamily: "Vilson", userPhoto: "Woomen1.jpg", userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: "Rogers", userFamily: "Jones", userPhoto: "Boy2.jpg", userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
-        UserModel(username: "Ariel", userFamily: "Theron", userPhoto: "Woomen2.jpg", userPhotoCollection: ["autumn","SnowFreinds","People"])
+        UserModel(username: .Mark, userFamily: .Laletin, userPhoto: .MarkPhoto, userPhotoCollection: ["Active1","Active2"]),
+        UserModel(username: .Jenny, userFamily: .Allen, userPhoto: .JennyPhoto, userPhotoCollection: ["Active3", "Active4"]),
+        UserModel(username: .Amanda, userFamily: .Vilson, userPhoto: .AmandaPhoto, userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
+        UserModel(username: .Rogers, userFamily: .Jones, userPhoto: .RogersPhoto, userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
+        UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
    
     // MARK: - Table view data source
@@ -46,12 +46,7 @@ final class MyFreindsTC: UITableViewController {
         }
 
         let freinds = myFreinds[indexPath.row]
-        
-        if let photo = freinds.userPhoto {
-            cell.configure(emblem: UIImage(named: photo) ?? UIImage(), name: "\(freinds.username) \(freinds.userFamily)")
-        } else {
-            cell.configure(emblem: UIImage(named: "Avatar") ?? UIImage(), name: "\(freinds.username) \(freinds.userFamily)")
-        }
+        cell.configure(emblem: UIImage(named: freinds.userPhoto.rawValue) ?? UIImage(), name: "\(freinds.username.rawValue) \(freinds.userFamily.rawValue)")
         
         return cell
     }

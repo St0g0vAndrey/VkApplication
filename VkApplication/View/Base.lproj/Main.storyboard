@@ -220,6 +220,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="QUy-AZ-nnx" id="lf1-x7-P7H"/>
                             <outlet property="delegate" destination="QUy-AZ-nnx" id="Uu9-WN-kgf"/>

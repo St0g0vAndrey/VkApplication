@@ -49,7 +49,7 @@ final class MyGroupsTableVC: UITableViewController {
         
         let corentGroup = group[indexPath.row]
         
-        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem) ?? UIImage(), name: corentGroup.groupName)
+        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
 
         return cell
     }

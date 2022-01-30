@@ -8,15 +8,25 @@
 import UIKit
 
 class GroupModel {
-    let groupName: String
-    let groupEmblem: String
+    let groupName: Name
+    let groupEmblem: Emblem
     
+    enum Name: String {
+        case BarberHop = "BarberShop"
+        case Pizza = "Gold Pizza"
+        case Komsomolsk = "Komsomolsk-in-Amure"
+    }
     
-    init(groupName: String, groupEmblem: String) {
+    enum Emblem: String {
+        case BarberHop = "BarberShop.jpg"
+        case Pizza = "Pizza.jpg"
+        case Komsomolsk = "Kom-in-Amure.jpg"
+    }
+    
+    init(groupName: Name, groupEmblem: Emblem) {
         self.groupName = groupName
         self.groupEmblem = groupEmblem
     }
-    
     
     deinit {
         

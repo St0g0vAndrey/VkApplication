@@ -13,15 +13,13 @@ final class AllGroupTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-
     }
 
     // MARK: - Colection Image and Group.name
    var myGroup = [
-        GroupModel(groupName: "BarberShop", groupEmblem: "BarberShop.jpg"),
-        GroupModel(groupName: "Gold Pizza", groupEmblem: "Pizza.jpg"),
-        GroupModel(groupName: "Komsomolsk-in-Amure", groupEmblem: "Kom-in-Amure.jpg"),
-        
+    GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
+    GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
+    GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
     ]
     
     
@@ -35,7 +33,6 @@ final class AllGroupTableVC: UITableViewController {
         return myGroup.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
@@ -44,9 +41,7 @@ final class AllGroupTableVC: UITableViewController {
         }
         
         let corentGroup = myGroup[indexPath.row]
-        
-        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem) ?? UIImage(), name: corentGroup.groupName)
-
+        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
         return cell
     }
     

@@ -14,13 +14,10 @@ class NewsTableVC: UITableViewController {
         tableView.register(UINib(nibName: "NewsNableCell", bundle: nil), forCellReuseIdentifier: "newsNableCell")
     }
 
-    
     var collectionNews = [
-        NewsPost(groupName: "BarberShop", groupEmblem: "BarberShop.jpg", photoNews: "BShop.jpg", titlePost: "Открытие нового зала уже совсем скоро!!!")
-    
+        NewsPost(groupName: .BarberHop, groupEmblem: .BarberHop, photoNews: "BShop.jpg", titlePost: "Открытие нового зала уже совсем скоро!!!"),
+        NewsPost(groupName: .Komsomolsk, groupEmblem: .Komsomolsk, photoNews: "Happy New Year.jpg", titlePost: "Продолжает свою работу главная Новогодняя елка.")
     ]
-    
-    
     
     // MARK: - Table view data source
 
@@ -32,7 +29,6 @@ class NewsTableVC: UITableViewController {
         collectionNews.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "newsNableCell", for: indexPath) as? NewsNableCell
@@ -43,10 +39,8 @@ class NewsTableVC: UITableViewController {
         let corentNews = collectionNews[indexPath.row]
         cell.configure(photoNews: UIImage(named: corentNews.photoNews) ?? UIImage(),
                        titleNews: corentNews.titlePost,
-                       nameGroup: corentNews.groupName,
-                       groupEmblem: UIImage(named: corentNews.groupEmblem) ?? UIImage())
-        
-
+                       nameGroup: corentNews.groupName.rawValue,
+                       groupEmblem: UIImage(named: corentNews.groupEmblem.rawValue) ?? UIImage())
         return cell
     }
     
