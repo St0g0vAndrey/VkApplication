@@ -14,6 +14,14 @@ class NewsTableVC: UITableViewController {
         tableView.register(UINib(nibName: "NewsNableCell", bundle: nil), forCellReuseIdentifier: "newsNableCell")
     }
 
+    
+    var collectionNews = [
+        NewsPost(groupName: "BarberShop", groupEmblem: "BarberShop.jpg", photoNews: "BShop.jpg", titlePost: "Открытие нового зала уже совсем скоро!!!")
+    
+    ]
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -21,7 +29,7 @@ class NewsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        collectionNews.count
     }
 
     
@@ -32,7 +40,12 @@ class NewsTableVC: UITableViewController {
             return UITableViewCell()
         }
 
-        // Configure the cell...
+        let corentNews = collectionNews[indexPath.row]
+        cell.configure(photoNews: UIImage(named: corentNews.photoNews) ?? UIImage(),
+                       titleNews: corentNews.titlePost,
+                       nameGroup: corentNews.groupName,
+                       groupEmblem: UIImage(named: corentNews.groupEmblem) ?? UIImage())
+        
 
         return cell
     }

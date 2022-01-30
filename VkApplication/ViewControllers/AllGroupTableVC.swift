@@ -17,7 +17,7 @@ final class AllGroupTableVC: UITableViewController {
     }
 
     // MARK: - Colection Image and Group.name
-    var myGroup = [
+   var myGroup = [
         GroupModel(groupName: "BarberShop", groupEmblem: "BarberShop.jpg"),
         GroupModel(groupName: "Gold Pizza", groupEmblem: "Pizza.jpg"),
         GroupModel(groupName: "Komsomolsk-in-Amure", groupEmblem: "Kom-in-Amure.jpg"),
