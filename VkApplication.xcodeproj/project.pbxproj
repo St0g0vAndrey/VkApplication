@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17FBC05027A18DE9007BF712 /* SomeHeaderTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FBC04F27A18DE9007BF712 /* SomeHeaderTable.swift */; };
 		35023B16278178740012582B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35023B14278178740012582B /* GroupCell.swift */; };
 		35023B17278178740012582B /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35023B15278178740012582B /* GroupCell.xib */; };
 		352AA4F9279AAEA700FAC6E3 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */; };
@@ -32,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		17FBC04F27A18DE9007BF712 /* SomeHeaderTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeHeaderTable.swift; sourceTree = "<group>"; };
 		35023B14278178740012582B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		35023B15278178740012582B /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
@@ -69,14 +67,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17FBC04E27A18DC0007BF712 /* TableHeader */ = {
-			isa = PBXGroup;
-			children = (
-				17FBC04F27A18DE9007BF712 /* SomeHeaderTable.swift */,
-			);
-			path = TableHeader;
-			sourceTree = "<group>";
-		};
 		35023B12278177E30012582B /* Resoul Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +131,6 @@
 		352ADA9B276DDE230009C658 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				17FBC04E27A18DC0007BF712 /* TableHeader */,
 				35023B12278177E30012582B /* Resoul Cell */,
 				352ADA8C276DCE720009C658 /* Main.storyboard */,
 			);
@@ -275,7 +264,6 @@
 				35367CA327A637B0007EF117 /* NewsTableVC.swift in Sources */,
 				35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */,
 				352AA4F9279AAEA700FAC6E3 /* AvatarImage.swift in Sources */,
-				17FBC05027A18DE9007BF712 /* SomeHeaderTable.swift in Sources */,
 				35023B16278178740012582B /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

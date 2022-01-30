@@ -7,13 +7,12 @@
 
 import UIKit
 
-final class AllGroupTableVC: UITableViewController {
+final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-        //tableView.register(SomeHeaderFooter.self, forHeaderFooterViewReuseIdentifier: "someHeaderFooter")
     }
 
     // MARK: - Colection Image and Group.name
@@ -24,10 +23,6 @@ final class AllGroupTableVC: UITableViewController {
     ]
     
     // MARK: - Table view data source
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroup.count
     }
@@ -43,15 +38,6 @@ final class AllGroupTableVC: UITableViewController {
         cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
         return cell
     }
-    
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard
-//            let someView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "someHeaderFooter") as? SomeHeaderFooter
-//        else {
-//            return UIView()
-//        }
-//        return someView
-//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
