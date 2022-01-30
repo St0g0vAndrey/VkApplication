@@ -20,6 +20,7 @@
 		35367CA027A636F1007EF117 /* NewsNableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35367C9E27A636F1007EF117 /* NewsNableCell.xib */; };
 		35367CA327A637B0007EF117 /* NewsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35367CA227A637B0007EF117 /* NewsTableVC.swift */; };
 		35367CA527A64A4B007EF117 /* NewsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35367CA427A64A4B007EF117 /* NewsPost.swift */; };
+		35367CA727A6D5EF007EF117 /* SearchBarGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35367CA627A6D5EF007EF117 /* SearchBarGroup.swift */; };
 		353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755252779F559002A5CC8 /* MyFreindsTC.swift */; };
 		353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */; };
 		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
@@ -46,6 +47,7 @@
 		35367C9E27A636F1007EF117 /* NewsNableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsNableCell.xib; sourceTree = "<group>"; };
 		35367CA227A637B0007EF117 /* NewsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableVC.swift; sourceTree = "<group>"; };
 		35367CA427A64A4B007EF117 /* NewsPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPost.swift; sourceTree = "<group>"; };
+		35367CA627A6D5EF007EF117 /* SearchBarGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarGroup.swift; sourceTree = "<group>"; };
 		353755252779F559002A5CC8 /* MyFreindsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFreindsTC.swift; sourceTree = "<group>"; };
 		353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
 		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
@@ -70,6 +72,7 @@
 		35023B12278177E30012582B /* Resoul Cell */ = {
 			isa = PBXGroup;
 			children = (
+				35367CA627A6D5EF007EF117 /* SearchBarGroup.swift */,
 				35367CA127A6370F007EF117 /* NewsTableCell */,
 				35EDFC4D2786F09600EE8DAC /* CollectionCell */,
 				35023B13278177F50012582B /* Tables */,
@@ -257,6 +260,7 @@
 				35367CA527A64A4B007EF117 /* NewsPost.swift in Sources */,
 				35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */,
 				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,
+				35367CA727A6D5EF007EF117 /* SearchBarGroup.swift in Sources */,
 				35367C9F27A636F1007EF117 /* NewsNableCell.swift in Sources */,
 				3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */,
 				352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */,

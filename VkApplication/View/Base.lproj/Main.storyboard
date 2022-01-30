@@ -224,7 +224,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x" customClass="SomeHeaderTable" customModule="VkApplication" customModuleProvider="target">
+                                <searchBar contentMode="redraw" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x" customClass="SearchBarGroup" customModule="VkApplication" customModuleProvider="target">
                                     <rect key="frame" x="5" y="5" width="404" height="34"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>

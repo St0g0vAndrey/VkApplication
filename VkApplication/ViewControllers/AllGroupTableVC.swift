@@ -1,5 +1,5 @@
 //
-//  SearchGroupTableVC.swift
+//  AllGroupTableVC.swift
 //  VkApplication
 //
 //  Created by Андрей Стогов on 27.12.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
+final class AllGroupTableVC: UITableViewController {
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
