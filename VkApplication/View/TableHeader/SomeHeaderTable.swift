@@ -7,6 +7,9 @@
 
 import UIKit
 
-final class SomeHeaderTable: UIView {
+final class SomeHeaderTable: UISearchBar {
     
+//    @IBAction func searchProcces(_ sender: UISearchBar) {
+//
+//    }
 }

@@ -12,7 +12,7 @@ final class MyFreindsTC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-        tableView.register(SomeHeaderFooter.self, forHeaderFooterViewReuseIdentifier: "someHeaderFooter")
+        
 
     }
     
@@ -51,12 +51,7 @@ final class MyFreindsTC: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let someView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "someHeaderFooter") as? SomeHeaderFooter else {
-            return UIView()
-        }
-        return someView
-    }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {

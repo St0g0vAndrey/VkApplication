@@ -13,21 +13,20 @@ final class AllGroupTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        //tableView.register(SomeHeaderFooter.self, forHeaderFooterViewReuseIdentifier: "someHeaderFooter")
     }
 
     // MARK: - Colection Image and Group.name
    var myGroup = [
-    GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
-    GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
-    GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
+        GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
+        GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
+        GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
     ]
     
-    
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myGroup.count
@@ -45,6 +44,14 @@ final class AllGroupTableVC: UITableViewController {
         return cell
     }
     
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard
+//            let someView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "someHeaderFooter") as? SomeHeaderFooter
+//        else {
+//            return UIView()
+//        }
+//        return someView
+//    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
@@ -53,6 +60,7 @@ final class AllGroupTableVC: UITableViewController {
         performSegue(withIdentifier: "addGroups", sender: nil)
     }
 
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

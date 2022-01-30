@@ -220,6 +220,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="6Ec-D3-OPP">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x" customClass="SomeHeaderTable" customModule="VkApplication" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="5" width="404" height="34"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="9Cy-Ag-i5x" secondAttribute="trailing" constant="5" id="1jl-Ut-O1y"/>
+                                <constraint firstAttribute="bottom" secondItem="9Cy-Ag-i5x" secondAttribute="bottom" constant="5" id="8xZ-5g-kfa"/>
+                                <constraint firstItem="9Cy-Ag-i5x" firstAttribute="top" secondItem="6Ec-D3-OPP" secondAttribute="top" constant="5" id="RZh-gT-XDk"/>
+                                <constraint firstItem="9Cy-Ag-i5x" firstAttribute="leading" secondItem="6Ec-D3-OPP" secondAttribute="leading" constant="5" id="UaA-SF-DSm"/>
+                            </constraints>
+                        </view>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="QUy-AZ-nnx" id="lf1-x7-P7H"/>

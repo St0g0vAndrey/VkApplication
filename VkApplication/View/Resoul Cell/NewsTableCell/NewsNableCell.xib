@@ -99,7 +99,7 @@
                                     <constraint firstItem="EcN-cK-uOi" firstAttribute="leading" secondItem="gpa-Af-f3q" secondAttribute="leading" constant="10" id="pU1-XF-7IJ"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-hQ-Jg2">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-hQ-Jg2">
                                 <rect key="frame" x="0.0" y="109" width="680" height="369"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAq-of-Pa0">
