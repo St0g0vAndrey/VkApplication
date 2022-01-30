@@ -268,9 +268,16 @@
                             <outlet property="delegate" destination="DmV-Lc-zAR" id="tNn-b2-uVL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="News" id="L4b-df-tmI"/>
+                    <navigationItem key="navigationItem" title="News" id="L4b-df-tmI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="pip.exit" catalog="system" id="M2r-QV-pbe">
+                            <connections>
+                                <segue destination="zpc-oR-OQE" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="sSf-WJ-Af9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U84-ak-hVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="zpc-oR-OQE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5643" y="1128"/>
         </scene>
@@ -278,7 +285,7 @@
         <scene sceneID="3Uy-Z1-f2y">
             <objects>
                 <navigationController id="P4f-fX-D4W" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" id="ffo-Od-Hfo"/>
+                    <tabBarItem key="tabBarItem" title="News" image="house" catalog="system" id="ffo-Od-Hfo"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vgw-VM-J4Y">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -334,6 +341,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.3" catalog="system" width="128" height="62"/>
         <image name="pip.exit" catalog="system" width="128" height="96"/>
