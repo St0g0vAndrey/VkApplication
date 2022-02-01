@@ -224,7 +224,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x" customClass="SearchBarGroup" customModule="VkApplication" customModuleProvider="target">
+                                <searchBar contentMode="redraw" restorationIdentifier="searchGR" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x">
                                     <rect key="frame" x="5" y="5" width="404" height="34"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -240,12 +240,13 @@
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="QUy-AZ-nnx" id="lf1-x7-P7H"/>
-                            <outlet property="delegate" destination="QUy-AZ-nnx" id="Uu9-WN-kgf"/>
+                            <outlet property="delegate" destination="9Cy-Ag-i5x" id="k7p-sz-UWB"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Frz-Gk-OI2"/>
                     <navigationItem key="navigationItem" title="List Groups" id="MSk-a6-GxC"/>
                     <connections>
+                        <outlet property="searchBarText" destination="9Cy-Ag-i5x" id="sBo-jX-5yW"/>
                         <segue destination="qYy-bq-h6p" kind="unwind" identifier="addGroups" unwindAction="addGroupsSegueWithSegue:" id="OT9-UQ-VUR"/>
                     </connections>
                 </tableViewController>

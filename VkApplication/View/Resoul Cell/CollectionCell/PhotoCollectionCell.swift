@@ -13,7 +13,6 @@ final class PhotoCollectionCell: UICollectionViewCell {
     var isLicked: Bool = false
     
     @IBOutlet weak var buttonLike: UIButton!
-    @IBOutlet weak var countLike: UILabel!
     @IBOutlet weak var photoCollection: UIImageView!
     @IBAction func clickToLike(_ sender: Any) {
         
@@ -23,10 +22,10 @@ final class PhotoCollectionCell: UICollectionViewCell {
             
             if (numbertLike == 0) {
                 numbertLike += 1
-                countLike.text = String(numbertLike)
+                buttonLike.setTitle("\(numbertLike)", for: .normal)
             } else {
-                numbertLike = 0
-                countLike.text = String(numbertLike)
+                numbertLike -= 1
+                buttonLike.setTitle("\(numbertLike)", for: .normal)
                 buttonLike.setImage(UIImage(systemName: "heart"), for: .normal)
             }
         case false:
@@ -39,7 +38,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
     //MARK: - Cicle
     override func awakeFromNib() {
         super.awakeFromNib()
-        configLabel()
+        buttonLike.setTitle("\(numbertLike)", for: .normal)
     }
     
     //MARK: - Init
@@ -47,10 +46,4 @@ final class PhotoCollectionCell: UICollectionViewCell {
         self.photoCollection.image = photo
     }
 
-    private func configLabel () {
-        countLike.textColor = .red
-        countLike.text = String(numbertLike)
-    }
-
-    
 }

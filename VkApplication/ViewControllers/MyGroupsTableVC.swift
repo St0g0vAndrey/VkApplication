@@ -22,19 +22,18 @@ final class MyGroupsTableVC: UITableViewController {
         guard segue.identifier == "addGroups",
               let allGroupController = segue.source as? AllGroupTableVC,
               let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
-              !self.group.contains(where: {$0.groupName == allGroupController.myGroup[groupIndex.row].groupName})
+              !self.group.contains(where: {$0.groupName == allGroupController.arrayGruop[groupIndex.row].groupName})
         else { return }
-        self.group.append(allGroupController.myGroup[groupIndex.row])
-        tableView.reloadData()
-        
+            self.group.append(allGroupController.arrayGruop[groupIndex.row])
+            tableView.reloadData()
     }
     
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return group.count
@@ -48,7 +47,6 @@ final class MyGroupsTableVC: UITableViewController {
         }
         
         let corentGroup = group[indexPath.row]
-        
         cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
 
         return cell

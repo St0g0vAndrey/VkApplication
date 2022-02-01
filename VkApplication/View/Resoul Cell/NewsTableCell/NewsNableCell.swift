@@ -37,7 +37,7 @@ class NewsNableCell: UITableViewCell {
                 textCount += 1
                 buttonCountLike.setTitle("\(textCount)", for: .normal)
             } else {
-                textCount = 0
+                textCount -= 1
                 buttonCountLike.setImage(UIImage(systemName: "heart"), for: .normal)
                 buttonCountLike.setTitle("\(textCount)", for: .normal)
             }

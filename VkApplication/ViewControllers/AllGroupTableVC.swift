@@ -7,24 +7,44 @@
 
 import UIKit
 
-final class AllGroupTableVC: UITableViewController {
+final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBarText: UISearchBar!
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        searchBarText.delegate = self
+    }
+    
+    var searchActive: Bool {
+        if searchBarText.text == "" {
+            return false
+        } else {
+            return true
+        }
     }
 
     // MARK: - Colection Image and Group.name
-   var myGroup = [
-        GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
-        GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
-        GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
-    ]
+    var arrayGruop: [GroupModel] {
+        if searchActive {
+            return []
+            
+//            GroupModel.Name.RawValue.filter({ (name: GroupModel) -> Bool in
+//                return name.groupName.rawValue.range(of: searchBarText.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
+//                })
+        } else {
+           return [
+                 GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
+                 GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
+                 GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
+             ]
+        }
+    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroup.count
+        return arrayGruop.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -34,7 +54,7 @@ final class AllGroupTableVC: UITableViewController {
             return UITableViewCell()
         }
         
-        let corentGroup = myGroup[indexPath.row]
+        let corentGroup = arrayGruop[indexPath.row]
         cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
         return cell
     }
@@ -46,6 +66,9 @@ final class AllGroupTableVC: UITableViewController {
         performSegue(withIdentifier: "addGroups", sender: nil)
     }
 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableView.reloadData()
+    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +115,10 @@ final class AllGroupTableVC: UITableViewController {
     }
     */
 
+    
 }
+
+
+    
+    
+   

@@ -12,8 +12,6 @@ final class MyFreindsTC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-        
-
     }
     
     //MARK: - Collections Image and FIO
@@ -51,8 +49,6 @@ final class MyFreindsTC: UITableViewController {
         return cell
     }
 
-    
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
