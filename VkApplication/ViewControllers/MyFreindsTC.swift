@@ -24,6 +24,10 @@ final class MyFreindsTC: UITableViewController {
         UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
    
+    var sortedFreind: [UserModel] {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
