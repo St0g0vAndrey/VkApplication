@@ -24,7 +24,7 @@ final class MyFreindsTC: UITableViewController {
         UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
    
-    //var sortedFreind: [UserModel] = myFreinds.sorted(by: {$0.userFamily < $1.userFamily})
+    //var sortedFreind: [UserModel] = myFreinds.sorted(by: {$0.userFamily.rawValue < $1.userFamily.rawValue})
     
     // MARK: - Table view data source
 
