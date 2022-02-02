@@ -25,23 +25,23 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
         }
     }
 
+    var myGroup: [GroupModel] = [
+        GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
+        GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
+        GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
+    ]
+    
     // MARK: - Colection Image and Group.name
     var arrayGruop: [GroupModel] {
         if searchActive {
-            return []
-            
-//            GroupModel.Name.RawValue.filter({ (name: GroupModel) -> Bool in
-//                return name.groupName.rawValue.range(of: searchBarText.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
-//                })
+            return myGroup.filter({ (name: GroupModel) -> Bool in
+                return name.groupName.rawValue.range(of: searchBarText.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
+                })
         } else {
-           return [
-                 GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
-                 GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
-                 GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
-             ]
+            return myGroup
         }
     }
-    
+
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayGruop.count
@@ -53,7 +53,6 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
         else {
             return UITableViewCell()
         }
-        
         let corentGroup = arrayGruop[indexPath.row]
         cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
         return cell

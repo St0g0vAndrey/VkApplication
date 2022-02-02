@@ -8,14 +8,11 @@
 import UIKit
 
 final class GroupCell: UITableViewCell {
-
-
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupImage: AvatarImage!
     
     func configure(emblem: UIImage, name: String){
         self.groupImage.image = emblem
         self.groupName.text = name
-        
     }
 }

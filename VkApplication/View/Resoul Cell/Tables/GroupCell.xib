@@ -73,7 +73,7 @@
                 <outlet property="groupImage" destination="5FI-p2-s4d" id="pX9-EX-Rmn"/>
                 <outlet property="groupName" destination="stJ-QB-Tmi" id="9Vg-VR-UHn"/>
             </connections>
-            <point key="canvasLocation" x="133" y="44"/>
+            <point key="canvasLocation" x="131.8840579710145" y="43.861607142857139"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -191,7 +191,7 @@
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="yg8-1v-Kyx" id="aXs-WR-hDh"/>
-                            <outlet property="delegate" destination="yg8-1v-Kyx" id="y4d-A8-gNS"/>
+                            <outlet property="delegate" destination="yg8-1v-Kyx" id="bD5-mB-eZs"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Groups" id="pd0-PG-3o8">
@@ -202,7 +202,8 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="ral-RJ-Gez">
                             <connections>
-                                <segue destination="QUy-AZ-nnx" kind="show" id="DUh-in-7lz"/>
+                                <action selector="addGroupsSegueWithSegue:" destination="yg8-1v-Kyx" id="xAd-vK-HD0"/>
+                                <segue destination="QUy-AZ-nnx" kind="show" id="jLy-rk-6s2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -224,7 +225,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" restorationIdentifier="searchGR" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x">
+                                <searchBar contentMode="redraw" placeholder="Search Group" translatesAutoresizingMaskIntoConstraints="NO" id="9Cy-Ag-i5x">
                                     <rect key="frame" x="5" y="5" width="404" height="34"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
@@ -240,7 +241,7 @@
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="QUy-AZ-nnx" id="lf1-x7-P7H"/>
-                            <outlet property="delegate" destination="9Cy-Ag-i5x" id="k7p-sz-UWB"/>
+                            <outlet property="delegate" destination="QUy-AZ-nnx" id="DjG-fE-tzL"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Frz-Gk-OI2"/>

@@ -13,7 +13,6 @@ final class MyGroupsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-
     }
     
     var group = [GroupModel]()
@@ -28,12 +27,7 @@ final class MyGroupsTableVC: UITableViewController {
             tableView.reloadData()
     }
     
-    
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return group.count
