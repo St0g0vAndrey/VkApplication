@@ -24,6 +24,7 @@
 		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
 		3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */; };
 		35D258D927AD73F10042AB61 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D258D827AD73F10042AB61 /* TestVC.swift */; };
+		35D258DB27AD785B0042AB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D258DA27AD785B0042AB61 /* Assets.xcassets */; };
 		35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */; };
 		35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */; };
 		35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC5A2787143100EE8DAC /* UserModel.swift */; };
@@ -50,6 +51,7 @@
 		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
 		3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllGroupTableVC.swift; path = VkApplication/ViewControllers/AllGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
 		35D258D827AD73F10042AB61 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		35D258DA27AD785B0042AB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
 		35EDFC5A2787143100EE8DAC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				352ADA9A276DDDB30009C658 /* ViewControllers */,
 				352ADA9C276DDE5E0009C658 /* Source */,
 				352ADA94276DCE750009C658 /* Info.plist */,
+				35D258DA27AD785B0042AB61 /* Assets.xcassets */,
 			);
 			path = VkApplication;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				35367CA027A636F1007EF117 /* NewsNableCell.xib in Resources */,
 				35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */,
 				352ADA8E276DCE720009C658 /* Main.storyboard in Resources */,
+				35D258DB27AD785B0042AB61 /* Assets.xcassets in Resources */,
 				35023B17278178740012582B /* GroupCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

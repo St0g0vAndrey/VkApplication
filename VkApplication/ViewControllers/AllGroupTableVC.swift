@@ -27,8 +27,10 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
 
     var myGroup: [GroupModel] = [
         GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
+        GroupModel(groupName: .Armin, groupEmblem: .Armin),
         GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
         GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
+        GroupModel(groupName: .ASOT, groupEmblem: .ASOT),
     ]
     
     // MARK: - Colection Image and Group.name
