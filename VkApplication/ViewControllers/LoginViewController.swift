@@ -13,8 +13,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var PasswTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var labelProgress1: UILabel!
+    @IBOutlet weak var labelProgress2: UILabel!
+    @IBOutlet weak var labelProgress3: UILabel!
+    
     @IBAction func LoginProcess(_ sender: Any) {
-      
     }
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
     }
@@ -23,9 +26,8 @@ final class LoginViewController: UIViewController {
     // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView
-            .addGestureRecognizer(
-                UITapGestureRecognizer(
+        scrollView.addGestureRecognizer(
+            UITapGestureRecognizer(
                     target: self,
                     action: #selector(hideKeyboard)))
     }
@@ -107,21 +109,20 @@ final class LoginViewController: UIViewController {
         switch identifier {
         case "goToMain":
             if !UserProcess() {
+                //animate()
                 ErroAlert()
                 return false
             } else {
+                //animate()
                 ClearUsers()
                 return true
             }
         default:
             return false
         }
-        
-        
     }
     
     // MARK: - Private
-    
     private func UserProcess () -> Bool {
         userTextField.text == "" && PasswTextField.text == ""
     }
@@ -138,7 +139,26 @@ final class LoginViewController: UIViewController {
         PasswTextField.text = ""
     }
     
+    //MARK: - Animate
     
+    func animate() {
+        view.layoutIfNeeded()
+        UIView.animate(
+            withDuration: 4.0,
+            delay: 0.4,
+            options: [
+                .curveEaseInOut,
+                .repeat,
+                .autoreverse
+            ]) {
+                self.labelProgress1.alpha = 0.0
+                self.view.layoutIfNeeded()
+            } completion: { isCompleted in
+                self.labelProgress1.alpha = 1.0
+                self.view.layoutIfNeeded()
+            }
+
+    }
     
     
     

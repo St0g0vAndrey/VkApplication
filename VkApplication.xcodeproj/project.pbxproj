@@ -14,7 +14,6 @@
 		352ADA89276DCE720009C658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ADA88276DCE720009C658 /* SceneDelegate.swift */; };
 		352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352ADA8A276DCE720009C658 /* LoginViewController.swift */; };
 		352ADA8E276DCE720009C658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA8C276DCE720009C658 /* Main.storyboard */; };
-		352ADA90276DCE750009C658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA8F276DCE750009C658 /* Assets.xcassets */; };
 		352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352ADA91276DCE750009C658 /* LaunchScreen.storyboard */; };
 		35367C9F27A636F1007EF117 /* NewsNableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35367C9D27A636F1007EF117 /* NewsNableCell.swift */; };
 		35367CA027A636F1007EF117 /* NewsNableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35367C9E27A636F1007EF117 /* NewsNableCell.xib */; };
@@ -24,6 +23,7 @@
 		353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */; };
 		3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */; };
 		3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */; };
+		35D258D927AD73F10042AB61 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35D258D827AD73F10042AB61 /* TestVC.swift */; };
 		35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */; };
 		35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */; };
 		35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC5A2787143100EE8DAC /* UserModel.swift */; };
@@ -39,7 +39,6 @@
 		352ADA88276DCE720009C658 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		352ADA8A276DCE720009C658 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		352ADA8D276DCE720009C658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		352ADA8F276DCE750009C658 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		352ADA92276DCE750009C658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		352ADA94276DCE750009C658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35367C9D27A636F1007EF117 /* NewsNableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsNableCell.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		353755272779F64B002A5CC8 /* MyGroupsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupsTableVC.swift; sourceTree = "<group>"; };
 		353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoCollectionVC.swift; path = VkApplication/ViewControllers/PhotoCollectionVC.swift; sourceTree = SOURCE_ROOT; };
 		3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllGroupTableVC.swift; path = VkApplication/ViewControllers/AllGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
+		35D258D827AD73F10042AB61 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		35EDFC522786F15C00EE8DAC /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
 		35EDFC5A2787143100EE8DAC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -109,7 +109,6 @@
 				352ADA9B276DDE230009C658 /* View */,
 				352ADA9A276DDDB30009C658 /* ViewControllers */,
 				352ADA9C276DDE5E0009C658 /* Source */,
-				352ADA8F276DCE750009C658 /* Assets.xcassets */,
 				352ADA94276DCE750009C658 /* Info.plist */,
 			);
 			path = VkApplication;
@@ -124,6 +123,7 @@
 				3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */,
 				353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */,
 				35367CA227A637B0007EF117 /* NewsTableVC.swift */,
+				35D258D827AD73F10042AB61 /* TestVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -237,7 +237,6 @@
 				352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */,
 				35367CA027A636F1007EF117 /* NewsNableCell.xib in Resources */,
 				35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */,
-				352ADA90276DCE750009C658 /* Assets.xcassets in Resources */,
 				352ADA8E276DCE720009C658 /* Main.storyboard in Resources */,
 				35023B17278178740012582B /* GroupCell.xib in Resources */,
 			);
@@ -250,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35D258D927AD73F10042AB61 /* TestVC.swift in Sources */,
 				35EDFC5D2787144200EE8DAC /* GroupModel.swift in Sources */,
 				353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */,
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,

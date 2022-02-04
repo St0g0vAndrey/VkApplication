@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="auC-2D-tPP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -106,13 +106,74 @@
                     </view>
                     <connections>
                         <outlet property="PasswTextField" destination="bs4-DY-T6n" id="UfF-gZ-dky"/>
+                        <outlet property="labelProgress1" destination="Chw-aB-odP" id="68e-Hl-Rw5"/>
+                        <outlet property="labelProgress2" destination="M1I-Fz-wfa" id="MxW-pU-nW3"/>
+                        <outlet property="labelProgress3" destination="xRp-w1-dQ1" id="gFi-pN-Qr6"/>
                         <outlet property="scrollView" destination="TRC-n7-9FM" id="uXT-an-y7q"/>
                         <outlet property="userTextField" destination="3t7-fj-I6e" id="OyD-ER-X4r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2826" y="141"/>
+            <point key="canvasLocation" x="2824.6376811594205" y="140.625"/>
+        </scene>
+        <!--TestVC-->
+        <scene sceneID="K8T-Qn-TxM">
+            <objects>
+                <viewController id="auC-2D-tPP" customClass="TestVC" customModule="VkApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j8p-9P-Kd9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="6Iq-IA-lNG">
+                                <rect key="frame" x="144.5" y="373.5" width="125" height="149.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chw-aB-odP">
+                                        <rect key="frame" x="0.0" y="0.0" width="27" height="149.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1I-Fz-wfa">
+                                        <rect key="frame" x="49" y="0.0" width="27" height="149.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRp-w1-dQ1">
+                                        <rect key="frame" x="98" y="0.0" width="27" height="149.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="125"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygR-2G-jYP">
+                                <rect key="frame" x="174" y="602" width="67" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPrecess:" destination="auC-2D-tPP" eventType="touchUpInside" id="vpZ-6Y-XVE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TNG-sL-GOG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Iq-IA-lNG" firstAttribute="centerX" secondItem="j8p-9P-Kd9" secondAttribute="centerX" id="WBN-z5-mfZ"/>
+                            <constraint firstItem="6Iq-IA-lNG" firstAttribute="centerY" secondItem="j8p-9P-Kd9" secondAttribute="centerY" id="Yjc-M2-OIe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="labelProgress1" destination="Chw-aB-odP" id="pSR-8N-x3r"/>
+                        <outlet property="labelProgress2" destination="M1I-Fz-wfa" id="rzv-3o-Pem"/>
+                        <outlet property="labelProgress3" destination="xRp-w1-dQ1" id="ciN-bW-y4Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RTP-nY-eeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2825" y="843"/>
         </scene>
         <!--FreindsTableVC-->
         <scene sceneID="qU6-xV-S6q">
