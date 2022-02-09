@@ -118,6 +118,11 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Y6m-FN-Go7"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="MBI-y5-STh"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="mXF-K3-kPS"/>
+                                    </mask>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -12,6 +12,7 @@ final class MyFreindsTC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        //print(massArray)
     }
     
     //MARK: - Collections Image and FIO
@@ -23,18 +24,13 @@ final class MyFreindsTC: UITableViewController {
         UserModel(username: .Rogers, userFamily: .Jones, userPhoto: .RogersPhoto, userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
         UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
     ]
-   
-    //var sortedFreind: [UserModel] = myFreinds.sorted(by: {$0.userFamily.rawValue < $1.userFamily.rawValue})
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return myFreinds.count
     }
 
@@ -45,8 +41,8 @@ final class MyFreindsTC: UITableViewController {
             return UITableViewCell()
         }
 
-        let freinds = myFreinds[indexPath.row]
-        cell.configure(emblem: UIImage(named: freinds.userPhoto.rawValue) ?? UIImage(), name: "\(freinds.username.rawValue) \(freinds.userFamily.rawValue)")
+        let freinds = SortedByName(myFreinds)[indexPath.row]
+        cell.configure(emblem: UIImage(named: freinds.userPhoto.rawValue) ?? UIImage(), name: "\(freinds.userFamily.rawValue) \(freinds.username.rawValue)")
         
         return cell
     }
@@ -58,10 +54,13 @@ final class MyFreindsTC: UITableViewController {
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
     
-    //let  massArray: [String] = Array(arrayLiteral: "A"..."Z")
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-       //return massArray
-        ["A","B","C","D"]
+        ["A","B","C","D","E"]
+        //return massArray
+    }
+    
+    private func SortedByName(_ arrayFreind: [UserModel]) -> [UserModel] {
+        arrayFreind.sorted(by: {$0.userFamily.rawValue < $1.userFamily.rawValue})
     }
     
     /*
@@ -108,5 +107,4 @@ final class MyFreindsTC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

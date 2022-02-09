@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class UserModel: Comparable {
+class UserModel {
     
     let username: Name
     var userFamily: Family
@@ -50,15 +50,19 @@ class UserModel: Comparable {
     deinit {
         
     }
-
-    //MARK: - Function
-    
-    static func < (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.userFamily.rawValue < rhs.userFamily.rawValue
-    }
-    
-    static func == (lhs: UserModel, rhs: UserModel) -> Bool {
-        return lhs.userFamily.rawValue == rhs.userFamily.rawValue
-    }
 }
+    //MARK: - Function
+    extension UserModel: Comparable {
+        
+        static func < (lhs: UserModel, rhs: UserModel) -> Bool {
+            return lhs.userFamily.rawValue < rhs.userFamily.rawValue
+        }
+        
+        static func == (lhs: UserModel, rhs: UserModel) -> Bool {
+            return lhs.userFamily.rawValue == rhs.userFamily.rawValue
+        }
+    }
+    
+    
+    
 
