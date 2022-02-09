@@ -12,7 +12,9 @@ class NewsTableCell: UITableViewCell {
     @IBOutlet weak var photoNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!
     @IBOutlet weak var nameGroup: UILabel!
+
     @IBOutlet weak var groupEmblem: AvatarImage!
+    
     
     @IBOutlet weak var buttonCountLike: UIButton!
     @IBOutlet weak var chatText: UIButton!
@@ -23,17 +25,13 @@ class NewsTableCell: UITableViewCell {
     
     @IBAction func sharePressButton(_ sender: UIButton) {
     }
-    
     @IBAction func chatPressButton(_ sender: UIButton) {
     }
-    
     @IBAction func buttonPressLike(_ sender: UIButton) {
-        
         animateLike()
         switch buttonCountLike.isEnabled {
             case true:
                 buttonCountLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-                
             if ( textCount == 0) {
                 textCount += 1
                 buttonCountLike.setTitle("\(textCount)", for: .normal)
