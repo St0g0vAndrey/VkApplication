@@ -133,7 +133,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="buttonCountLike" destination="Lrl-0K-X7v" id="3PX-Ci-ASd"/>
+                <outlet property="buttonCountLike" destination="Lrl-0K-X7v" id="pbu-J9-GlJ"/>
                 <outlet property="chatText" destination="j3T-nF-Jg6" id="v4A-O0-cdl"/>
                 <outlet property="groupEmblem" destination="hmO-17-8g0" id="QJ5-rF-i7g"/>
                 <outlet property="nameGroup" destination="sjU-pt-zdx" id="abh-Xg-RbE"/>

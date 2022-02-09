@@ -1,5 +1,5 @@
 //
-//  FullPhotoCollection.swift
+//  FullPhotoVC.swift
 //  VkApplication
 //
 //  Created by Андрей Стогов on 09.02.2022.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class FullPhotoCollection: UIViewController {
+class FullPhotoVC: UIViewController {
 
-    @IBOutlet weak var fullPhotoImage: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
     }
     
 

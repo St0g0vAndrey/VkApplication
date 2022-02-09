@@ -30,7 +30,6 @@ class NewsTableCell: UITableViewCell {
     @IBAction func buttonPressLike(_ sender: UIButton) {
         
         animateLike()
-        
         switch buttonCountLike.isEnabled {
             case true:
                 buttonCountLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -54,7 +53,6 @@ class NewsTableCell: UITableViewCell {
         chatText.setTitle("\(textCount)", for: .normal)
         shareText.setTitle("\(textCount)", for: .normal)
         viewsCountText.setTitle("\(textCount)", for: .normal)
-        
     }
     
     func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: UIImage) {
