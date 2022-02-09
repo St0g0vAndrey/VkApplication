@@ -1,5 +1,5 @@
 //
-//  NewsNableCell.swift
+//  NewsTableCell.swift
 //  VkApplication
 //
 //  Created by Андрей Стогов on 30.01.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewsNableCell: UITableViewCell {
+class NewsTableCell: UITableViewCell {
 
     @IBOutlet weak var photoNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!

@@ -23,6 +23,7 @@ final class PhotoCollectionVC: UICollectionViewController {
     ]
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return 2
     }
 
@@ -33,15 +34,21 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-       // let photo = userCollection[indexPath.row]
+       let photo = userCollection[indexPath.row]
         
         for indexUser in 0...userCollection[indexPath.row].userPhotoCollection.count-1 {
-            cell.configure(photo: UIImage(named: userCollection[indexPath.row].userPhotoCollection[indexUser]))
+            cell.configure(photo: UIImage(named: photo.userPhotoCollection[indexUser]))
         }
         
         return cell
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        defer {
+            collectionView.deselectItem(at: indexPath, animated: true)
+        }
+        performSegue(withIdentifier: "showCollectionFull", sender: nil)
+    }
     // MARK: UICollectionViewDelegate
 
     /*

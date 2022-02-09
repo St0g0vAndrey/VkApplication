@@ -22,7 +22,6 @@ final class LoginViewController: UIViewController {
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
     }
     
-    
     // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,10 @@ final class LoginViewController: UIViewController {
             UITapGestureRecognizer(
                     target: self,
                     action: #selector(hideKeyboard)))
+        labelProgress1.alpha = 0.0
+        labelProgress2.alpha = 0.0
+        labelProgress3.alpha = 0.0
+        animate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +69,7 @@ final class LoginViewController: UIViewController {
             object: nil)
     }
     
-    //MARK: - Action
+    //MARK: - Action KeyBoard
     @objc func keyboardWasShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
         let kbSize = (info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue)
@@ -109,11 +112,9 @@ final class LoginViewController: UIViewController {
         switch identifier {
         case "goToMain":
             if !UserProcess() {
-                //animate()
                 ErroAlert()
                 return false
             } else {
-                //animate()
                 ClearUsers()
                 return true
             }
@@ -139,28 +140,51 @@ final class LoginViewController: UIViewController {
         PasswTextField.text = ""
     }
     
-    //MARK: - Animate
+    //MARK: - Animate Proccees
+    let duration = 1.5
+    let delay = 0.2
     
     func animate() {
         view.layoutIfNeeded()
         UIView.animate(
-            withDuration: 4.0,
-            delay: 0.4,
+            withDuration: duration,
+            delay: delay,
             options: [
                 .curveEaseInOut,
-                .repeat,
                 .autoreverse
-            ]) {
+            ]) { [self] in
                 self.labelProgress1.alpha = 0.0
-                self.view.layoutIfNeeded()
-            } completion: { isCompleted in
-                self.labelProgress1.alpha = 1.0
-                self.view.layoutIfNeeded()
-            }
-
+            self.view.layoutIfNeeded()
+        } completion: { [self] isCompleted in
+            self.labelProgress1.alpha = 1.0
+            UIView.animate(
+                withDuration: self.duration,
+                delay: delay,
+                options: [
+                    .curveEaseInOut,
+                    .autoreverse
+                ]) {
+                    self.labelProgress2.alpha = 0.0
+                    self.view.layoutIfNeeded()
+                } completion: { isCompleted in
+                    self.labelProgress2.alpha = 1.0
+                    UIView.animate(
+                        withDuration: self.duration,
+                        delay: delay,
+                        options: [
+                            .curveEaseInOut,
+                            .autoreverse
+                        ]) {
+                            self.labelProgress3.alpha = 0.0
+                            self.view.layoutIfNeeded()
+                        } completion: { isCompleted in
+                            self.labelProgress3.alpha = 1.0
+                            self.view.layoutIfNeeded()
+                        }
+                    self.view.layoutIfNeeded()
+                }
+            self.view.layoutIfNeeded()
+        }
     }
-    
-    
-    
 }
 

@@ -11,7 +11,7 @@ class NewsTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "NewsNableCell", bundle: nil), forCellReuseIdentifier: "newsNableCell")
+        tableView.register(UINib(nibName: "NewsTableCell", bundle: nil), forCellReuseIdentifier: "newsTableCell")
     }
 
     var collectionNews = [
@@ -31,7 +31,7 @@ class NewsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newsNableCell", for: indexPath) as? NewsNableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "newsTableCell", for: indexPath) as? NewsTableCell
         else {
             return UITableViewCell()
         }
