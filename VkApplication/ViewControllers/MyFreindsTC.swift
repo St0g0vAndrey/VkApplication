@@ -58,8 +58,10 @@ final class MyFreindsTC: UITableViewController {
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
     
+    //let  massArray: [String] = Array(arrayLiteral: "A"..."Z")
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        ["A", "B", "C"]
+       //return massArray
+        ["A","B","C","D"]
     }
     
     /*

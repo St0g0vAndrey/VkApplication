@@ -33,13 +33,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imt-mz-u2l">
+                                <rect key="frame" x="0.0" y="0.0" width="63" height="63"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="buttonImageProcess:" destination="bN9-vo-FjT" eventType="touchUpInside" id="DXM-UK-01K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5FI-p2-s4d" secondAttribute="trailing" id="2V0-27-YM1"/>
                             <constraint firstItem="5FI-p2-s4d" firstAttribute="top" secondItem="tFB-EL-uGa" secondAttribute="top" id="2Y2-3q-TsM"/>
+                            <constraint firstItem="imt-mz-u2l" firstAttribute="top" secondItem="tFB-EL-uGa" secondAttribute="top" id="OWc-AE-tpy"/>
                             <constraint firstItem="5FI-p2-s4d" firstAttribute="leading" secondItem="tFB-EL-uGa" secondAttribute="leading" id="SIE-4K-xTI"/>
+                            <constraint firstAttribute="bottom" secondItem="imt-mz-u2l" secondAttribute="bottom" id="gLK-up-plv"/>
+                            <constraint firstItem="imt-mz-u2l" firstAttribute="leading" secondItem="tFB-EL-uGa" secondAttribute="leading" id="kGB-n0-GQa"/>
                             <constraint firstAttribute="bottom" secondItem="5FI-p2-s4d" secondAttribute="bottom" id="rSJ-m8-pGQ"/>
+                            <constraint firstAttribute="trailing" secondItem="imt-mz-u2l" secondAttribute="trailing" id="tO4-Ba-mXP"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">

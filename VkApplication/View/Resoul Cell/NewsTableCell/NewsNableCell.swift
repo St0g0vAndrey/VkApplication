@@ -9,7 +9,6 @@ import UIKit
 
 class NewsNableCell: UITableViewCell {
 
-    
     @IBOutlet weak var photoNews: UIImageView!
     @IBOutlet weak var titleNews: UILabel!
     @IBOutlet weak var nameGroup: UILabel!
@@ -29,6 +28,9 @@ class NewsNableCell: UITableViewCell {
     }
     
     @IBAction func buttonPressLike(_ sender: UIButton) {
+        
+        animateLike()
+        
         switch buttonCountLike.isEnabled {
             case true:
                 buttonCountLike.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -44,7 +46,6 @@ class NewsNableCell: UITableViewCell {
             case false:
                 break
     }
-    
 }
     
     override func awakeFromNib() {
@@ -63,7 +64,22 @@ class NewsNableCell: UITableViewCell {
         self.groupEmblem.image = groupEmblem
     }
     
+    let duration = 2.0
+    let delay = 0.1
+    let rotationAngel = 1.5
     
+    func animateLike() {
+        UIView.animate(
+            withDuration: duration,
+            delay: delay,
+            options: [
+                .curveEaseInOut,
+            ]) { [self] in
+                self.buttonCountLike.transform = CGAffineTransform(rotationAngle: self.rotationAngel)
+            } completion: { _ in
+                self.buttonCountLike.transform = .identity
+            }
+    }
     
 //
 //    override func setSelected(_ selected: Bool, animated: Bool) {
