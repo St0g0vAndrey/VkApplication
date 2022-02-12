@@ -16,7 +16,6 @@ final class MyFreindsTC: UITableViewController {
     }
     
     //MARK: - Collections Image and FIO
-    
     var myFreinds: [UserModel] = [
         UserModel(username: .Mark, userFamily: .Laletin, userPhoto: .MarkPhoto, userPhotoCollection: ["Active1","Active2"]),
         UserModel(username: .Jenny, userFamily: .Allen, userPhoto: .JennyPhoto, userPhotoCollection: ["Active3", "Active4"]),
