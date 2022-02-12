@@ -23,4 +23,9 @@ final class CustomNavigateController: UINavigationController, UINavigationContro
         }
     }
     
+    
+    func navigationController(_ navigationController: UINavigationController,
+                              interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        <#code#>
+    }
 }
