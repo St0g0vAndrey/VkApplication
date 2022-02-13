@@ -31,6 +31,7 @@
 		35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */; };
 		35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC5A2787143100EE8DAC /* UserModel.swift */; };
 		35EDFC5D2787144200EE8DAC /* GroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDFC5C2787144200EE8DAC /* GroupModel.swift */; };
+		35FB16C427B9260500A30379 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35FB16C327B9260400A30379 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		35EDFC532786F15C00EE8DAC /* PhotoCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionCell.xib; sourceTree = "<group>"; };
 		35EDFC5A2787143100EE8DAC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		35EDFC5C2787144200EE8DAC /* GroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupModel.swift; sourceTree = "<group>"; };
+		35FB16C327B9260400A30379 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 				35EDFC5C2787144200EE8DAC /* GroupModel.swift */,
 				352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */,
 				35367CA427A64A4B007EF117 /* NewsPost.swift */,
+				35FB16C327B9260400A30379 /* Singleton.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				35EDFC5D2787144200EE8DAC /* GroupModel.swift in Sources */,
 				353755262779F559002A5CC8 /* MyFreindsTC.swift in Sources */,
+				35FB16C427B9260500A30379 /* Singleton.swift in Sources */,
 				35E6979A27B3E07B00592FC5 /* FullPhotoVC.swift in Sources */,
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */,
