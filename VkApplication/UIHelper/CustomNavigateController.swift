@@ -9,13 +9,19 @@ import UIKit
 
 final class CustomNavigateController: UINavigationController, UINavigationControllerDelegate {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate = self
+    }
+    
+    
     func navigationController(_ navigationController: UINavigationController,
                               animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         switch operation {
         case .push:
-            return
+            return PushAnimate()
         case .pop:
             return
         default:
@@ -26,6 +32,6 @@ final class CustomNavigateController: UINavigationController, UINavigationContro
     
     func navigationController(_ navigationController: UINavigationController,
                               interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        <#code#>
+        nil
     }
 }
