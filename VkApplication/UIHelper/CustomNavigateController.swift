@@ -23,7 +23,7 @@ final class CustomNavigateController: UINavigationController, UINavigationContro
         case .push:
             return PushAnimate()
         case .pop:
-            return
+            return PopAnimate()
         default:
             return nil
         }

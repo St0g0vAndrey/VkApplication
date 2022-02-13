@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class PushAnimate: NSObject, UIViewControllerAnimatedTransitioning {
     private let animateTime = 1.2
@@ -21,22 +22,23 @@ final class PushAnimate: NSObject, UIViewControllerAnimatedTransitioning {
         else { return }
         
         transitionContext.containerView.addSubview(destination.view)
+        
         destination.view.frame = transitionContext.containerView.frame
         destination.view.transform = CGAffineTransform(
-            translationX: source.view.bounds.width,
-            y: source.view.bounds.height)
+            translationX: source.view.frame.width,
+            y: source.view.frame.height)
         
         UIView.animateKeyframes(
             withDuration: animateTime,
-            delay: 0.0, options: .calculationModePaced) {
+            delay: 0.0, options: .calculationModeCubic) {
                 UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.75) {
-                    let translation = CGAffineTransform(translationX: -250.0, y: 0.0)
-                    let scale = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                    let translation = CGAffineTransform(translationX: 0.0, y: source.view.frame.maxY)
+                    let scale = CGAffineTransform(rotationAngle: -0.8)
                     source.view.transform = translation.concatenating(scale)
                     }
                 UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.45) {
-                    let translation = CGAffineTransform(translationX: source.view.bounds.width / 2, y: 0.0)
-                    let scale = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                    let translation = CGAffineTransform(translationX: 0.0, y: source.view.frame.maxY)
+                    let scale = CGAffineTransform(rotationAngle: -0.8)
                     destination.view.transform = translation.concatenating(scale)
                     }
                 UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.4) {
@@ -46,7 +48,6 @@ final class PushAnimate: NSObject, UIViewControllerAnimatedTransitioning {
                 if isComplete && !transitionContext.transitionWasCancelled {
                     source.view.transform = .identity
             }
-
                 transitionContext.completeTransition(isComplete && !transitionContext.transitionWasCancelled)
         }
     }
@@ -65,23 +66,25 @@ final class PopAnimate: NSObject, UIViewControllerAnimatedTransitioning {
             let destination = transitionContext.viewController(forKey: .to)
         else { return }
         
-        transitionContext.containerView.addSubview(destination.view)
+        transitionContext.containerView.insertSubview(destination.view, belowSubview: source.view)
         destination.view.frame = transitionContext.containerView.frame
         destination.view.transform = CGAffineTransform(
             translationX: source.view.bounds.width,
-            y: source.view.bounds.height)
+            y: 0.0).concatenating(CGAffineTransform(
+                translationX: 0.0,
+                y: 0.0))
         
         UIView.animateKeyframes(
             withDuration: animateTime,
             delay: 0.0, options: .calculationModePaced) {
                 UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.75) {
-                    let translation = CGAffineTransform(translationX: -250.0, y: 0.0)
-                    let scale = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                    let translation = CGAffineTransform(translationX: 0.0, y: source.view.frame.maxY)
+                    let scale = CGAffineTransform(rotationAngle: -0.8)
                     source.view.transform = translation.concatenating(scale)
                     }
                 UIView.addKeyframe(withRelativeStartTime: 0.2, relativeDuration: 0.45) {
-                    let translation = CGAffineTransform(translationX: source.view.bounds.width / 2, y: 0.0)
-                    let scale = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                    let translation = CGAffineTransform(translationX: 0.0, y: source.view.frame.maxY)
+                    let scale = CGAffineTransform(rotationAngle: -0.8)
                     destination.view.transform = translation.concatenating(scale)
                     }
                 UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.4) {
