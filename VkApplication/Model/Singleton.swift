@@ -7,7 +7,7 @@
 
 final class SomeSessions {
     var token: String = ""
-    var userID: Int = 0
+    let userID: Int = 8083041
     
     static let instance = SomeSessions()
     
