@@ -18,7 +18,7 @@ final class NetworkService {
         
         var urlConstructor = URLComponents()
         urlConstructor.scheme = "https"
-        urlConstructor.host = 
+        urlConstructor.host = "api.vk.com"
         
         guard
             let url = url else { return }
