@@ -14,16 +14,39 @@ final class NetworkService {
     let configurate = URLSessionConfiguration.default
     lazy var mySession = URLSession(configuration: configurate)
     
+    private var urlConstructor: URLComponents = {
+        var constructor = URLComponents()
+        constructor.scheme = "https"
+        constructor.host = "api.vk.com"
+        constructor.path = ""
+        return constructor
+    }()
+    
+    
+    
     func featchUser() {
         
-        var urlConstructor = URLComponents()
-        urlConstructor.scheme = "https"
-        urlConstructor.host = "api.vk.com"
+        var consstructor = urlConstructor
         
-        guard
-            let url = url else { return }
+        consstructor.queryItems = [
+            URLQueryItem(name: "appid", value: "\(SomeSessions.instance.userID)")
+        ]
+        
+        guard let url = url else { return }
+        
         let task = mySession.dataTask(with: url) { data, response, error in
-            print (data, response, error)
+            if let response = response as? HTTPURLResponse {
+                print(response.statusCode)
+            }
+            
+            guard error == nil,
+                    let data = data
+            else { return }
+            
+            let json = try? JSONSerialization.jsonObject(
+                with: data,
+                options: .allowFragments)
+            print (json)
         }
         task.resume()
     }

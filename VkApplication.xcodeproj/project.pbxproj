@@ -25,6 +25,7 @@
 		3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */; };
 		3569092D27B7F739003A5E11 /* CustomNavigateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569092C27B7F739003A5E11 /* CustomNavigateController.swift */; };
 		3569092F27B7FC27003A5E11 /* NavigationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569092E27B7FC27003A5E11 /* NavigationAnimator.swift */; };
+		3569CB7827C099A700B058C1 /* VkLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569CB7727C099A700B058C1 /* VkLoginVC.swift */; };
 		35D258DB27AD785B0042AB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D258DA27AD785B0042AB61 /* Assets.xcassets */; };
 		35DA1A1327BF7B7E00870C61 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DA1A1227BF7B7E00870C61 /* NetworkService.swift */; };
 		35E6979A27B3E07B00592FC5 /* FullPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E6979927B3E07B00592FC5 /* FullPhotoVC.swift */; };
@@ -56,6 +57,7 @@
 		3537552B2779F6FE002A5CC8 /* AllGroupTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AllGroupTableVC.swift; path = VkApplication/ViewControllers/AllGroupTableVC.swift; sourceTree = SOURCE_ROOT; };
 		3569092C27B7F739003A5E11 /* CustomNavigateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigateController.swift; sourceTree = "<group>"; };
 		3569092E27B7FC27003A5E11 /* NavigationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationAnimator.swift; sourceTree = "<group>"; };
+		3569CB7727C099A700B058C1 /* VkLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkLoginVC.swift; sourceTree = "<group>"; };
 		35D258DA27AD785B0042AB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DA1A1227BF7B7E00870C61 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		35E6979927B3E07B00592FC5 /* FullPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPhotoVC.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				353755292779F68C002A5CC8 /* PhotoCollectionVC.swift */,
 				35367CA227A637B0007EF117 /* NewsTableVC.swift */,
 				35E6979927B3E07B00592FC5 /* FullPhotoVC.swift */,
+				3569CB7727C099A700B058C1 /* VkLoginVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				35367CA327A637B0007EF117 /* NewsTableVC.swift in Sources */,
 				35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */,
 				352AA4F9279AAEA700FAC6E3 /* AvatarImage.swift in Sources */,
+				3569CB7827C099A700B058C1 /* VkLoginVC.swift in Sources */,
 				35023B16278178740012582B /* GroupCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
