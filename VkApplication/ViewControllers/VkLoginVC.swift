@@ -16,6 +16,25 @@ class VkLoginVC: UIViewController  {
         }
     }
     
+    @IBAction func unwindToLogin (_ segue: UIStoryboardSegue) {
+        SomeSessions.instance.token = ""
+        SomeSessions.instance.userID = 0
+        
+        let dataStore = WKWebsiteDataStore.default()
+        dataStore.fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach {
+                if $0.displayName.contains("vk") {
+                    dataStore.removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), for: [$0]) { [weak self] in
+                        guard
+                            let self = self,
+                            let url = self.urlComponent.url
+                        else { return }
+                        self.vkWebKit.load(URLRequest(url: url))
+                    }
+                }
+            }
+        }
+    }
     private var urlComponent: URLComponents = {
        var comp = URLComponents()
         comp.scheme = "https"
@@ -48,4 +67,34 @@ class VkLoginVC: UIViewController  {
 
 extension VkLoginVC: WKNavigationDelegate {
     
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        guard
+            let url =  navigationResponse.response.url,
+            url.path == "/blank.html",
+            let fragment = url.fragment
+        else { return decisionHandler(.allow) }
+        
+        let parametrs = fragment
+            .components(separatedBy: "&")
+            .map {$0.components(separatedBy: "=")}
+            .reduce([String: String]()) { partialResult, params in
+                var dict = partialResult
+                let key = params[0]
+                let value = params[1]
+                dict[key] = value
+                return dict
+            }
+        guard
+            let token = parametrs["access_token"],
+            let userIdString = parametrs["user_id"],
+            let userId = Int(userIdString)
+        else { return decisionHandler(.allow) }
+        
+        SomeSessions.instance.token = token
+        SomeSessions.instance.userID = userId
+        
+        performSegue(withIdentifier: "myLogin", sender: nil)
+        decisionHandler(.cancel)
+        
+    }
 }

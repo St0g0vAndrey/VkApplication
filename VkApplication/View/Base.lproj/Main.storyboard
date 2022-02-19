@@ -37,6 +37,7 @@
                     </view>
                     <connections>
                         <outlet property="vkWebKit" destination="Ih6-xv-NhI" id="2Bi-YR-if2"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="myLogin" modalPresentationStyle="fullScreen" id="Arv-Yr-0un"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4AP-Gq-8Jn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
