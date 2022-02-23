@@ -9,7 +9,8 @@ import Foundation
 
 final class NetworkService {
     
-    let url = URL(string: "")
+//    let url = URL(string: "https://api.vk.com/groups.get?user_id=705889354&access_token=8083041&v=5.131")
+    
     let configurate = URLSessionConfiguration.default
     lazy var mySession = URLSession(configuration: configurate)
     
@@ -17,22 +18,26 @@ final class NetworkService {
         var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
+        constructor.path = "/method/groups.get"
         return constructor
     }()
     
     func featchUser() {
         
         var consstructor = urlConstructor
-        
         consstructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "first_name", value: "Andrey"),
-            URLQueryItem(name: "last_name", value: "Pologin")
+            URLQueryItem(name: "user_id", value: "\(SomeSessions.instance.userID)")
         ]
         
-        guard let url = url else { return }
+        guard
+//            let url = url,
+            var request = URLRequest(url: urlConstructor.url!)
+        else { return }
         
-        let task = mySession.dataTask(with: url) { data, response, error in
+        request.httpMethod = "POST"
+        
+        let task = mySession.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)
             }
@@ -43,7 +48,7 @@ final class NetworkService {
             
             let json = try? JSONSerialization.jsonObject(
                 with: data,
-                options: .allowFragments)
+                options: JSONSerialization.ReadingOptions.allowFragments)
             print (json)
         }
         task.resume()
