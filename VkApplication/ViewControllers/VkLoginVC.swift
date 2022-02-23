@@ -35,6 +35,7 @@ class VkLoginVC: UIViewController  {
             }
         }
     }
+    
     private var urlComponent: URLComponents = {
        var comp = URLComponents()
         comp.scheme = "https"
@@ -51,8 +52,6 @@ class VkLoginVC: UIViewController  {
         return comp
     }()
     
-    //private let netWork = NetworkService()
-    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +59,7 @@ class VkLoginVC: UIViewController  {
             let url = urlComponent.url
         else { return }
         vkWebKit.load(URLRequest(url: url))
-        //netWork.featchUser()
     }
-
 }
 
 extension VkLoginVC: WKNavigationDelegate {
@@ -95,6 +92,5 @@ extension VkLoginVC: WKNavigationDelegate {
         
         performSegue(withIdentifier: "myLogin", sender: nil)
         decisionHandler(.cancel)
-        
     }
 }

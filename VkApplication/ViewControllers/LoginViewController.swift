@@ -22,6 +22,7 @@ final class LoginViewController: UIViewController {
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
     }
     
+    private let networkService = NetworkService()
     // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,7 @@ final class LoginViewController: UIViewController {
         labelProgress2.alpha = 0.0
         labelProgress3.alpha = 0.0
         animate()
+        networkService.featchUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {
