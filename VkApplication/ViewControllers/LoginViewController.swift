@@ -18,6 +18,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var labelProgress3: UILabel!
     
     @IBAction func LoginProcess(_ sender: Any) {
+        networkService.featchUser()
     }
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
     }
@@ -34,7 +35,7 @@ final class LoginViewController: UIViewController {
         labelProgress2.alpha = 0.0
         labelProgress3.alpha = 0.0
         animate()
-        networkService.featchUser()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,8 +9,6 @@ import Foundation
 
 final class NetworkService {
     
-//    let url = URL(string: "https://api.vk.com/groups.get?user_id=705889354&access_token=8083041&v=5.131")
-    
     let configurate = URLSessionConfiguration.default
     lazy var mySession = URLSession(configuration: configurate)
     
@@ -24,20 +22,18 @@ final class NetworkService {
     
     func featchUser() {
         
-        var consstructor = urlConstructor
-        consstructor.queryItems = [
+        var constructor = urlConstructor
+        constructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "user_id", value: "\(SomeSessions.instance.userID)")
+            URLQueryItem(name: "user_ids", value: "\(SomeSessions.instance.userID)"),
+            URLQueryItem(name: "extended", value: "1")
         ]
         
         guard
-//            let url = url,
-            var request = URLRequest(url: urlConstructor.url!)
+            let url = urlConstructor.url
         else { return }
-        
-        request.httpMethod = "POST"
-        
-        let task = mySession.dataTask(with: request) { data, response, error in
+
+        let task = mySession.dataTask(with: url) { data, response, error in
             if let response = response as? HTTPURLResponse {
                 print(response.statusCode)
             }
