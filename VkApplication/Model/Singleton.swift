@@ -5,11 +5,11 @@
 //  Created by Андрей Стогов on 13.02.2022.
 //
 
-final class SomeSessions {
+class SomeSessions {
     var token: String = ""
     var userID: Int = 0
     
-    static let instance = SomeSessions()
+    static var instance = SomeSessions()
     
     private init() {
         
