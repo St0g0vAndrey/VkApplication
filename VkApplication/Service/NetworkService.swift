@@ -16,7 +16,7 @@ final class NetworkService {
         var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
-        constructor.path = "/groups/groups.get"
+        constructor.path = "/Groups/groups.get"
         return constructor
     }()
     
@@ -45,7 +45,7 @@ final class NetworkService {
             let json = try? JSONSerialization.jsonObject(
                 with: data,
                 options: JSONSerialization.ReadingOptions.allowFragments)
-            print (json)
+            print (json ?? "")
         }
         task.resume()
     }
