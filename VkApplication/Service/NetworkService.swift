@@ -16,7 +16,7 @@ final class NetworkService {
         var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
-        constructor.path = "/Groups/groups.get"
+        constructor.path = "/method/groups.get"
         return constructor
     }()
     
@@ -24,13 +24,14 @@ final class NetworkService {
         
         var constructor = urlConstructor
         constructor.queryItems = [
-            URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "user_id", value: "\(SomeSessions.instance.userID)"),
-            URLQueryItem(name: "extended", value: "1")
+            URLQueryItem(name: "access_token", value: SomeSessions.instance.token),
+            URLQueryItem(name: "user_ids", value: "\(SomeSessions.instance.userID)"),
+            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "v", value: "5.131")
         ]
         
         guard
-            let url = urlConstructor.url
+            let url = constructor.url
         else { return }
         
         let task = mySession.dataTask(with: url) { data, response, error in

@@ -200,7 +200,7 @@
                     <navigationItem key="navigationItem" title="Freinds" id="wR9-nA-rdP">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="pip.exit" catalog="system" id="7qS-Ar-g1W">
                             <connections>
-                                <segue destination="31x-ZN-ZfS" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="y0F-NU-9yC"/>
+                                <segue destination="31x-ZN-ZfS" kind="unwind" unwindAction="unwindToLogin:" id="wts-Xi-98z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -308,7 +308,7 @@
                     <navigationItem key="navigationItem" title="Groups" id="pd0-PG-3o8">
                         <barButtonItem key="leftBarButtonItem" image="pip.exit" catalog="system" id="yjX-8s-mrc">
                             <connections>
-                                <segue destination="iPa-1D-xV0" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="WW5-m3-3Br"/>
+                                <segue destination="iPa-1D-xV0" kind="unwind" unwindAction="unwindToLogin:" id="oIY-7g-fTO"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="ral-RJ-Gez">
@@ -402,7 +402,7 @@
                     <navigationItem key="navigationItem" title="News" id="L4b-df-tmI">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="pip.exit" catalog="system" id="M2r-QV-pbe">
                             <connections>
-                                <segue destination="zpc-oR-OQE" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="sSf-WJ-Af9"/>
+                                <segue destination="zpc-oR-OQE" kind="unwind" unwindAction="unwindToLogin:" id="2t6-5X-7uE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
