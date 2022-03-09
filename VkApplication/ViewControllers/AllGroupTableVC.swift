@@ -25,20 +25,13 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
         }
     }
 
-    var myGroup: [GroupModel] = [
-        GroupModel(groupName: .BarberHop, groupEmblem: .BarberHop),
-        GroupModel(groupName: .Armin, groupEmblem: .Armin),
-        GroupModel(groupName: .Pizza, groupEmblem: .Pizza),
-        GroupModel(groupName: .Komsomolsk, groupEmblem: .Komsomolsk),
-        GroupModel(groupName: .ASOT, groupEmblem: .ASOT),
-    ]
+    var myGroup: [GroupModel] = []
     
     // MARK: - Colection Image and Group.name
     var arrayGruop: [GroupModel] {
         if searchActive {
             return myGroup.filter({ (name: GroupModel) -> Bool in
-                return name.groupName.rawValue.range(of: searchBarText.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil
-                })
+                return name.nameGroups.range(of: searchBarText.text ?? "", options: .caseInsensitive, range: nil, locale: nil) != nil})
         } else {
             return myGroup
         }
@@ -56,7 +49,7 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
             return UITableViewCell()
         }
         let corentGroup = arrayGruop[indexPath.row]
-        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
+        cell.configure(emblem: UIImage(named: corentGroup.emblemGroup) ?? UIImage(), name: corentGroup.nameGroups)
         return cell
     }
     

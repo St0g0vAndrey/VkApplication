@@ -21,7 +21,7 @@ final class MyGroupsTableVC: UITableViewController {
         guard segue.identifier == "addGroups",
               let allGroupController = segue.source as? AllGroupTableVC,
               let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
-              !self.group.contains(where: {$0.groupName == allGroupController.arrayGruop[groupIndex.row].groupName})
+              !self.group.contains(where: {$0.nameGroups == allGroupController.arrayGruop[groupIndex.row].nameGroups})
         else { return }
             self.group.append(allGroupController.arrayGruop[groupIndex.row])
             tableView.reloadData()
@@ -41,7 +41,7 @@ final class MyGroupsTableVC: UITableViewController {
         }
         
         let corentGroup = group[indexPath.row]
-        cell.configure(emblem: UIImage(named: corentGroup.groupEmblem.rawValue) ?? UIImage(), name: corentGroup.groupName.rawValue)
+        cell.configure(emblem: UIImage(named: corentGroup.emblemGroup) ?? UIImage(), name: corentGroup.nameGroups)
 
         return cell
     }

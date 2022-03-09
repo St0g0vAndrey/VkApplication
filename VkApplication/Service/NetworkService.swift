@@ -42,11 +42,14 @@ final class NetworkService {
             guard error == nil,
                     let data = data
             else { return }
-            
-            let json = try? JSONSerialization.jsonObject(
-                with: data,
-                options: JSONSerialization.ReadingOptions.allowFragments)
-            print (json ?? "")
+            do {
+            let groupsResponse = try JSONDecoder().decode(
+                GroupModelResponse.self,
+                from: data)
+            print(groupsResponse)
+            } catch {
+                print(error)
+            }
         }
         task.resume()
     }

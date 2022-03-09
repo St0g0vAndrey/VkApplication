@@ -7,18 +7,7 @@
 
 import UIKit
 
-final class NewsPost: GroupModel {
+struct NewsPost {
     var photoNews: String
     var titlePost: String
-    
-    
-    init(groupName: Name, groupEmblem: Emblem, photoNews: String, titlePost: String) {
-        self.photoNews = photoNews
-        self.titlePost = titlePost
-        super.init(groupName: groupName, groupEmblem: groupEmblem)
-    }
-    
-    deinit {
-        
-    }
 }

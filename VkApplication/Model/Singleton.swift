@@ -5,7 +5,7 @@
 //  Created by Андрей Стогов on 13.02.2022.
 //
 
-class SomeSessions {
+final class SomeSessions {
     var token: String = ""
     var userID: Int = 0
     

@@ -14,10 +14,7 @@ class NewsTableVC: UITableViewController {
         tableView.register(UINib(nibName: "NewsTableCell", bundle: nil), forCellReuseIdentifier: "newsTableCell")
     }
 
-    var collectionNews = [
-        NewsPost(groupName: .BarberHop, groupEmblem: .BarberHop, photoNews: "BShop.jpg", titlePost: "Открытие нового зала уже совсем скоро!!!"),
-        NewsPost(groupName: .Komsomolsk, groupEmblem: .Komsomolsk, photoNews: "Happy New Year.jpg", titlePost: "Продолжает свою работу главная Новогодняя елка.")
-    ]
+    var collectionNews = [GroupModel(nameGroups: "GeekBrains", emblemGroup: "https://sun1-56.userapi.com/s/v1/ig2/Z-aPt8MPvgStrmjfCwo-WPK7jrMdYoNUhCbpYgj93XAEZmeVnhMNsfnSVDzdguEzVff4BZfxcC_K87kje-d5L_n9.jpg?size=50x50&quality=95&crop=256,256,2046,2046&ava=1")]
     
     // MARK: - Table view data source
 
@@ -37,13 +34,11 @@ class NewsTableVC: UITableViewController {
         }
 
         let corentNews = collectionNews[indexPath.row]
-        cell.configure(photoNews: UIImage(named: corentNews.photoNews) ?? UIImage(),
-                       titleNews: corentNews.titlePost,
-                       nameGroup: corentNews.groupName.rawValue,
-                       groupEmblem: UIImage(named: corentNews.groupEmblem.rawValue) ?? UIImage())
+        cell.configure(photoNews: UIImage(named: corentNews.emblemGroup) ?? UIImage(), titleNews: "Hello",
+                       nameGroup: corentNews.nameGroups,
+                       groupEmblem: UIImage(named: corentNews.emblemGroup) ?? UIImage())
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
