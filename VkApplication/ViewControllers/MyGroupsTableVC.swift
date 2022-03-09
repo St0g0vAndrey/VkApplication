@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class MyGroupsTableVC: UITableViewController {
   
@@ -13,24 +14,41 @@ final class MyGroupsTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+
+        networkService.featchUser { [weak self] result in
+            switch result {
+            case .success(let myGroups):
+                self?.myGroup = myGroups
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
-    
-    var group = [GroupModel]()
+    private let networkService = NetworkService()
+    private var myGroup = [GroupModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
+    }
     
     @IBAction func addGroupsSegue(segue: UIStoryboardSegue) {
         guard segue.identifier == "addGroups",
               let allGroupController = segue.source as? AllGroupTableVC,
               let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
-              !self.group.contains(where: {$0.nameGroups == allGroupController.arrayGruop[groupIndex.row].nameGroups})
+              !self.myGroup.contains(where: {$0.nameGroups == allGroupController.arrayGruop[groupIndex.row].nameGroups})
         else { return }
-            self.group.append(allGroupController.arrayGruop[groupIndex.row])
+            self.myGroup.append(allGroupController.arrayGruop[groupIndex.row])
             tableView.reloadData()
     }
     
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return group.count
+        return myGroup.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -40,7 +58,7 @@ final class MyGroupsTableVC: UITableViewController {
             return UITableViewCell()
         }
         
-        let corentGroup = group[indexPath.row]
+        let corentGroup = myGroup[indexPath.row]
         cell.configure(emblem: UIImage(named: corentGroup.emblemGroup) ?? UIImage(), name: corentGroup.nameGroups)
 
         return cell
@@ -56,7 +74,7 @@ final class MyGroupsTableVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            group.remove(at: indexPath.row)
+            myGroup.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }

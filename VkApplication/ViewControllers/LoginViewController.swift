@@ -18,12 +18,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var labelProgress3: UILabel!
     
     @IBAction func LoginProcess(_ sender: Any) {
-        networkService.featchUser()
     }
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
     }
     
-    private let networkService = NetworkService()
+    
     // MARK: - Cycle
     override func viewDidLoad() {
         super.viewDidLoad()

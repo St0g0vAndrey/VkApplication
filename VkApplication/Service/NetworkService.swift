@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkService {
+class NetworkService {
     
     let configurate = URLSessionConfiguration.default
     lazy var mySession = URLSession(configuration: configurate)
@@ -20,7 +20,7 @@ final class NetworkService {
         return constructor
     }()
     
-    func featchUser() {
+    func featchUser(completion: @escaping (Result<[GroupModel], Error>) -> Void) {
         
         var constructor = urlConstructor
         constructor.queryItems = [
@@ -46,9 +46,9 @@ final class NetworkService {
             let groupsResponse = try JSONDecoder().decode(
                 GroupModelResponse.self,
                 from: data)
-            print(groupsResponse)
+                completion(.success(groupsResponse.groups.items))
             } catch {
-                print(error)
+                completion(.failure(error))
             }
         }
         task.resume()
