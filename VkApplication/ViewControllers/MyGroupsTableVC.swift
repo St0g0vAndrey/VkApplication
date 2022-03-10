@@ -25,7 +25,7 @@ final class MyGroupsTableVC: UITableViewController {
         }
     }
     
-    private let networkService = NetworkService()
+    private let networkService = NetworkServiceGroup()
     private var myGroup = [GroupModel]() {
         didSet {
             DispatchQueue.main.async {

@@ -1,32 +1,32 @@
 //
-//  NetworkService.swift
+//  NetworkServicePhoto.swift
 //  VkApplication
 //
-//  Created by Андрей Стогов on 18.02.2022.
+//  Created by Андрей Стогов on 10.03.2022.
 //
 
 import Foundation
 
-class NetworkService {
+class NetworkServicePhoto {
     
     let configurate = URLSessionConfiguration.default
     lazy var mySession = URLSession(configuration: configurate)
     
-    private var urlConstructor: URLComponents = {
-        var constructor = URLComponents()
+    private let urlConstructor: URLComponents = {
+       var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
-        constructor.path = "/method/groups.get"
+        constructor.path = "/method/photos.get"
         return constructor
     }()
     
-    func featchUser(completion: @escaping (Result<[GroupModel], Error>) -> Void) {
+    func featchUser(completion: @escaping(Result<[UserPhoto], Error>) -> Void) {
         
         var constructor = urlConstructor
         constructor.queryItems = [
-            URLQueryItem(name: "access_token", value: SomeSessions.instance.token),
-            URLQueryItem(name: "user_ids", value: "\(SomeSessions.instance.userID)"),
-            URLQueryItem(name: "extended", value: "1"),
+            URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
+            URLQueryItem(name: "user_id", value: "\()"),
+            URLQueryItem(name: "album_id", value: "profile"),
             URLQueryItem(name: "v", value: "5.131")
         ]
         
@@ -43,10 +43,10 @@ class NetworkService {
                     let data = data
             else { return }
             do {
-            let groupsResponse = try JSONDecoder().decode(
-                GroupModelResponse.self,
+            let photoResponse = try JSONDecoder().decode(
+                UserPhotoResponse.self,
                 from: data)
-                completion(.success(groupsResponse.groups.items))
+                completion(.success(photoResponse.photoResponse.items))
             } catch {
                 completion(.failure(error))
             }
