@@ -34,6 +34,7 @@
 		35B97FC027DA260100F1DF59 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FBF27DA260100F1DF59 /* UserItems.swift */; };
 		35B97FC227DA268900F1DF59 /* UserPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */; };
 		35B97FC427DA271E00F1DF59 /* NetworkServicePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FC327DA271E00F1DF59 /* NetworkServicePhoto.swift */; };
+		35B97FC627DA2E9100F1DF59 /* PhotoCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FC527DA2E9100F1DF59 /* PhotoCollection.swift */; };
 		35D258DB27AD785B0042AB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35D258DA27AD785B0042AB61 /* Assets.xcassets */; };
 		35DA1A1327BF7B7E00870C61 /* NetworkServiceGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35DA1A1227BF7B7E00870C61 /* NetworkServiceGroup.swift */; };
 		35E2A22427D8E3B800290630 /* ItemsModelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E2A22327D8E3B800290630 /* ItemsModelGroup.swift */; };
@@ -75,6 +76,7 @@
 		35B97FBF27DA260100F1DF59 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoResponse.swift; sourceTree = "<group>"; };
 		35B97FC327DA271E00F1DF59 /* NetworkServicePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicePhoto.swift; sourceTree = "<group>"; };
+		35B97FC527DA2E9100F1DF59 /* PhotoCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollection.swift; sourceTree = "<group>"; };
 		35D258DA27AD785B0042AB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35DA1A1227BF7B7E00870C61 /* NetworkServiceGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceGroup.swift; sourceTree = "<group>"; };
 		35E2A22327D8E3B800290630 /* ItemsModelGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModelGroup.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		35B97FBC27DA23BC00F1DF59 /* ModelUserPhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
+				35B97FC527DA2E9100F1DF59 /* PhotoCollection.swift */,
 				35B97FBD27DA23E800F1DF59 /* UserPhoto.swift */,
 				35B97FBF27DA260100F1DF59 /* UserItems.swift */,
 				35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */,
@@ -355,6 +358,7 @@
 				3537552C2779F6FE002A5CC8 /* AllGroupTableVC.swift in Sources */,
 				352ADA87276DCE720009C658 /* AppDelegate.swift in Sources */,
 				352ADA89276DCE720009C658 /* SceneDelegate.swift in Sources */,
+				35B97FC627DA2E9100F1DF59 /* PhotoCollection.swift in Sources */,
 				3569092D27B7F739003A5E11 /* CustomNavigateController.swift in Sources */,
 				35367CA327A637B0007EF117 /* NewsTableVC.swift in Sources */,
 				35EDFC5B2787143100EE8DAC /* UserModel.swift in Sources */,

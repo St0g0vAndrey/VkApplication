@@ -8,12 +8,12 @@
 import Foundation
 
 struct UserPhoto {
-    let photo: String
+    let userPhoto: [PhotoCollection]
 }
 
 extension UserPhoto: Codable {
     enum CodingKeys: String, CodingKey {
-        case photo = "url"
+        case userPhoto = "sizes"
     }
 }
 /*

@@ -23,7 +23,13 @@ final class MyFreindsTC: UITableViewController {
     }
     
     private let netWorkUser = NetworkServiceUser()
-    private var myFreinds = [UserModel]()
+    private var myFreinds = [UserModel]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
