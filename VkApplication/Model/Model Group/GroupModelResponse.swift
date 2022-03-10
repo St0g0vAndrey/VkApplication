@@ -8,7 +8,7 @@
 import Foundation
 
 struct GroupModelResponse {
-    let groups: ItemsModel
+    let groups: ItemsModelGroup
 }
 
 extension GroupModelResponse: Codable {

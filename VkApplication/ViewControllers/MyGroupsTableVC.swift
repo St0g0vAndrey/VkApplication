@@ -19,19 +19,18 @@ final class MyGroupsTableVC: UITableViewController {
             switch result {
             case .success(let myGroups):
                 self?.myGroup = myGroups
-                
             case .failure(let error):
                 print(error)
             }
         }
     }
+    
     private let networkService = NetworkService()
     private var myGroup = [GroupModel]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
         }
     }
     

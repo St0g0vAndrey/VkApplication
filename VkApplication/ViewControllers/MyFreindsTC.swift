@@ -12,17 +12,18 @@ final class MyFreindsTC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
-        //print(massArray)
+        netWorkUser.featchUser { [weak self] result in
+            switch result {
+            case .success(let myFreinds):
+                self?.myFreinds = myFreinds
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
-    //MARK: - Collections Image and FIO
-    var myFreinds: [UserModel] = [
-        UserModel(username: .Mark, userFamily: .Laletin, userPhoto: .MarkPhoto, userPhotoCollection: ["Active1","Active2"]),
-        UserModel(username: .Jenny, userFamily: .Allen, userPhoto: .JennyPhoto, userPhotoCollection: ["Active3", "Active4"]),
-        UserModel(username: .Amanda, userFamily: .Vilson, userPhoto: .AmandaPhoto, userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: .Rogers, userFamily: .Jones, userPhoto: .RogersPhoto, userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
-        UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
-    ]
+    private let netWorkUser = NetworkServiceUser()
+    private var myFreinds = [UserModel]()
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,7 +42,7 @@ final class MyFreindsTC: UITableViewController {
         }
 
         let freinds = SortedByName(myFreinds)[indexPath.row]
-        cell.configure(emblem: UIImage(named: freinds.userPhoto.rawValue) ?? UIImage(), name: "\(freinds.userFamily.rawValue) \(freinds.username.rawValue)")
+        cell.configure(emblem: UIImage(named: freinds.userPhoto) ?? UIImage(), name: "\(freinds.userFamily) \(freinds.userName)")
         
         return cell
     }
@@ -59,7 +60,7 @@ final class MyFreindsTC: UITableViewController {
     }
     
     private func SortedByName(_ arrayFreind: [UserModel]) -> [UserModel] {
-        arrayFreind.sorted(by: {$0.userFamily.rawValue < $1.userFamily.rawValue})
+        arrayFreind.sorted(by: {$0.userFamily < $1.userFamily})
     }
     
     /*

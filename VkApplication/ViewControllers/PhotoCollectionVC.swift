@@ -14,13 +14,7 @@ final class PhotoCollectionVC: UICollectionViewController {
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
     }
 
-    var userCollection = [
-        UserModel(username: .Mark, userFamily: .Laletin, userPhoto: .MarkPhoto, userPhotoCollection: ["Active1","Active2"]),
-        UserModel(username: .Jenny, userFamily: .Allen, userPhoto: .JennyPhoto, userPhotoCollection: ["Active3", "Active4"]),
-        UserModel(username: .Amanda, userFamily: .Vilson, userPhoto: .AmandaPhoto, userPhotoCollection: ["Active5", "Active6","ActiveBolgariy"]),
-        UserModel(username: .Rogers, userFamily: .Jones, userPhoto: .RogersPhoto, userPhotoCollection: ["ActiveNight1","ActiveKipr"]),
-        UserModel(username: .Ariel, userFamily: .Theron, userPhoto: .ArielPhoto, userPhotoCollection: ["autumn","SnowFreinds","People"])
-    ]
+    var userCollection = []
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
