@@ -30,7 +30,7 @@
 		35B97FB727DA14A600F1DF59 /* ItemsModelUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FB627DA14A600F1DF59 /* ItemsModelUser.swift */; };
 		35B97FB927DA159900F1DF59 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FB827DA159900F1DF59 /* UserResponse.swift */; };
 		35B97FBB27DA168700F1DF59 /* NetworkServiceUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FBA27DA168700F1DF59 /* NetworkServiceUser.swift */; };
-		35B97FBE27DA23E800F1DF59 /* UserPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FBD27DA23E800F1DF59 /* UserPhoto.swift */; };
+		35B97FBE27DA23E800F1DF59 /* UserSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FBD27DA23E800F1DF59 /* UserSizes.swift */; };
 		35B97FC027DA260100F1DF59 /* UserItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FBF27DA260100F1DF59 /* UserItems.swift */; };
 		35B97FC227DA268900F1DF59 /* UserPhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */; };
 		35B97FC427DA271E00F1DF59 /* NetworkServicePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B97FC327DA271E00F1DF59 /* NetworkServicePhoto.swift */; };
@@ -72,7 +72,7 @@
 		35B97FB627DA14A600F1DF59 /* ItemsModelUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsModelUser.swift; sourceTree = "<group>"; };
 		35B97FB827DA159900F1DF59 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		35B97FBA27DA168700F1DF59 /* NetworkServiceUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceUser.swift; sourceTree = "<group>"; };
-		35B97FBD27DA23E800F1DF59 /* UserPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhoto.swift; sourceTree = "<group>"; };
+		35B97FBD27DA23E800F1DF59 /* UserSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSizes.swift; sourceTree = "<group>"; };
 		35B97FBF27DA260100F1DF59 /* UserItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserItems.swift; sourceTree = "<group>"; };
 		35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoResponse.swift; sourceTree = "<group>"; };
 		35B97FC327DA271E00F1DF59 /* NetworkServicePhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicePhoto.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				35B97FC527DA2E9100F1DF59 /* PhotoCollection.swift */,
-				35B97FBD27DA23E800F1DF59 /* UserPhoto.swift */,
+				35B97FBD27DA23E800F1DF59 /* UserSizes.swift */,
 				35B97FBF27DA260100F1DF59 /* UserItems.swift */,
 				35B97FC127DA268900F1DF59 /* UserPhotoResponse.swift */,
 			);
@@ -343,7 +343,7 @@
 				35FB16C427B9260500A30379 /* Singleton.swift in Sources */,
 				35B97FBB27DA168700F1DF59 /* NetworkServiceUser.swift in Sources */,
 				35E6979A27B3E07B00592FC5 /* FullPhotoVC.swift in Sources */,
-				35B97FBE27DA23E800F1DF59 /* UserPhoto.swift in Sources */,
+				35B97FBE27DA23E800F1DF59 /* UserSizes.swift in Sources */,
 				3557A79A27D2526000B7428C /* GroupModelResponse.swift in Sources */,
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				352ADA8B276DCE720009C658 /* LoginViewController.swift in Sources */,

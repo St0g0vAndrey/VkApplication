@@ -1,5 +1,5 @@
 //
-//  UserPhoto.swift
+//  UserSizes.swift
 //  VkApplication
 //
 //  Created by Андрей Стогов on 10.03.2022.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct UserPhoto {
-    let userPhoto: [PhotoCollection]
+struct UserSizes {
+    let sizes: [PhotoCollection]
 }
 
-extension UserPhoto: Codable {
+extension UserSizes: Codable {
     enum CodingKeys: String, CodingKey {
-        case userPhoto = "sizes"
+        case sizes = "sizes"
     }
 }
 /*

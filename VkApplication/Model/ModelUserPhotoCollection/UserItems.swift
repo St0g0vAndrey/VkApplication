@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserItems {
-    let items: [UserPhoto]
+    let items: [UserSizes]
 }
 
 extension UserItems: Codable {

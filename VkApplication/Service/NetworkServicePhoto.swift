@@ -20,12 +20,12 @@ class NetworkServicePhoto {
         return constructor
     }()
     
-    func featchUser(completion: @escaping(Result<[UserPhoto], Error>) -> Void) {
+    func featchUserPhoto(_ userId: Int, completion: @escaping(Result<[UserSizes], Error>) -> Void) {
         
         var constructor = urlConstructor
         constructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "user_id", value: "\()"),
+            URLQueryItem(name: "user_id", value: "\(userId)"),
             URLQueryItem(name: "album_id", value: "profile"),
             URLQueryItem(name: "v", value: "5.131")
         ]

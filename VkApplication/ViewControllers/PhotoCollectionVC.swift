@@ -12,13 +12,27 @@ final class PhotoCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
+        networkService.featchUserPhoto(userId) { [weak self] result in
+            switch result {
+            case .success(let photo):
+                self?.userCollection = photo
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
-    var userCollection = [PhotoCollection]()
+    private var userId = 0
+    func freindsID (user: UserModel) {
+        userId = user.userId
+    }
+    
+    private let networkService = NetworkServicePhoto()
+    var userCollection = [UserSizes]()
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return userCollection[1].sizes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -30,8 +44,8 @@ final class PhotoCollectionVC: UICollectionViewController {
     
        let photoUS = userCollection[indexPath.row]
         
-        for indexUser in 0...userCollection[indexPath.row].photo.count-1 {
-            cell.configure(photo: UIImage(named: photoUS.photo[indexUser]))
+        for indexUser in 0...photoUS.sizes.count-1 {
+            cell.configure(photo: UIImage(named: photoUS.sizes[indexUser].photo))
         }
         
         return cell
@@ -74,4 +88,8 @@ final class PhotoCollectionVC: UICollectionViewController {
     }
     */
 
+}
+
+protocol PhotoCollectionVCDelegate: class {
+    func freindsID (user: UserModel)
 }

@@ -22,6 +22,7 @@ final class MyFreindsTC: UITableViewController {
         }
     }
     
+    weak var delegate: PhotoCollectionVCDelegate?
     private let netWorkUser = NetworkServiceUser()
     private var myFreinds = [UserModel]() {
         didSet {
@@ -30,6 +31,14 @@ final class MyFreindsTC: UITableViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto" {
+            let ctrl = segue.destination as? PhotoCollectionVC
+            //ctrl.delegate = self
+        }
+    }
+    
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -56,6 +65,9 @@ final class MyFreindsTC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
+            let user = self.myFreinds[indexPath.row]
+            delegate?.freindsID(user: user)
+            dismiss(animated: true)
         }
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
@@ -113,4 +125,11 @@ final class MyFreindsTC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+}
+
+var userId = 0
+extension MyFreindsTC: PhotoCollectionVCDelegate {
+    func freindsID (user: UserModel) {
+        userId = user.userId
+    }
 }
