@@ -16,7 +16,7 @@ class NetworkServicePhoto {
        var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
-        constructor.path = "/method/photos.get"
+        constructor.path = "/method/photos.getAll"
         return constructor
     }()
     
@@ -25,8 +25,7 @@ class NetworkServicePhoto {
         var constructor = urlConstructor
         constructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "user_id", value: "\(userId)"),
-            URLQueryItem(name: "album_id", value: "profile"),
+            URLQueryItem(name: "owner_id", value: "\(userId)"),
             URLQueryItem(name: "v", value: "5.131")
         ]
         

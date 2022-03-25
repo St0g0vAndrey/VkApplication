@@ -21,18 +21,13 @@ final class PhotoCollectionVC: UICollectionViewController {
             }
         }
     }
-
-    private var userId = 0
-    func freindsID (user: UserModel) {
-        userId = user.userId
-    }
     
     private let networkService = NetworkServicePhoto()
     var userCollection = [UserSizes]()
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return userCollection[1].sizes.count
+        return userCollection.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,10 +37,10 @@ final class PhotoCollectionVC: UICollectionViewController {
             return UICollectionViewCell()
         }
     
-       let photoUS = userCollection[indexPath.row]
+        let photoUS = userCollection[0].sizes
         
-        for indexUser in 0...photoUS.sizes.count-1 {
-            cell.configure(photo: UIImage(named: photoUS.sizes[indexUser].photo))
+        for indexUser in 0...userCollection.count {
+            cell.configure(photo: UIImage(named: photoUS[indexUser].photo))
         }
         
         return cell

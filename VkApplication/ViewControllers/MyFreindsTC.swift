@@ -66,8 +66,7 @@ final class MyFreindsTC: UITableViewController {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
             let user = self.myFreinds[indexPath.row]
-            delegate?.freindsID(user: user)
-            dismiss(animated: true)
+            SomeSessions.instance.userID = user.userId
         }
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
