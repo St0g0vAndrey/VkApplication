@@ -12,7 +12,7 @@ final class PhotoCollectionVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
-        networkService.featchUserPhoto(userId) { [weak self] result in
+        networkService.featchUserPhoto(SomeSessions.instance.userID) { [weak self] result in
             switch result {
             case .success(let photo):
                 self?.userCollection = photo
@@ -85,6 +85,6 @@ final class PhotoCollectionVC: UICollectionViewController {
 
 }
 
-protocol PhotoCollectionVCDelegate: class {
-    func freindsID (user: UserModel)
-}
+//protocol PhotoCollectionVCDelegate: class {
+//    func freindsID (user: UserModel)
+//}

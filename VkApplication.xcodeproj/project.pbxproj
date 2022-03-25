@@ -277,7 +277,6 @@
 				EB8CB19530ABA67805006D13 /* Pods-VkApplication.debug.xcconfig */,
 				208FBBB5F375ACC0BEE0EA4E /* Pods-VkApplication.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -300,6 +299,7 @@
 				352ADA7F276DCE720009C658 /* Sources */,
 				352ADA80276DCE720009C658 /* Frameworks */,
 				352ADA81276DCE720009C658 /* Resources */,
+				0743A8A576E08ACEA45BBEBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +360,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0743A8A576E08ACEA45BBEBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VkApplication/Pods-VkApplication-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VkApplication/Pods-VkApplication-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VkApplication/Pods-VkApplication-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DB748E23ADCC8E87DF20F090 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

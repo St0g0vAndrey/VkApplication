@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class MyFreindsTC: UITableViewController {
 
@@ -22,7 +23,7 @@ final class MyFreindsTC: UITableViewController {
         }
     }
     
-    weak var delegate: PhotoCollectionVCDelegate?
+//    weak var delegate: PhotoCollectionVCDelegate?
     private let netWorkUser = NetworkServiceUser()
     private var myFreinds = [UserModel]() {
         didSet {
@@ -32,12 +33,12 @@ final class MyFreindsTC: UITableViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPhoto" {
-            let ctrl = segue.destination as? PhotoCollectionVC
-            //ctrl.delegate = self
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showPhoto" {
+//            let ctrl = segue.destination as? PhotoCollectionVC
+//            //ctrl.delegate = self
+//        }
+//    }
     
     
     // MARK: - Table view data source
@@ -52,12 +53,12 @@ final class MyFreindsTC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
-        else {
-            return UITableViewCell()
-        }
+        else { return UITableViewCell() }
 
         let freinds = SortedByName(myFreinds)[indexPath.row]
-        cell.configure(emblem: UIImage(named: freinds.userPhoto) ?? UIImage(), name: "\(freinds.userFamily) \(freinds.userName)")
+        let imageView = UIImageView()
+        var image = imageView.kf.setImage(with: URL(string: freinds.userPhoto))
+        cell.configure(emblem: UIImage(named: "\(image)") ?? UIImage(), name: "\(freinds.userFamily) \(freinds.userName)")
         
         return cell
     }
@@ -126,9 +127,9 @@ final class MyFreindsTC: UITableViewController {
     */
 }
 
-var userId = 0
-extension MyFreindsTC: PhotoCollectionVCDelegate {
-    func freindsID (user: UserModel) {
-        userId = user.userId
-    }
-}
+//var userId = 0
+//extension MyFreindsTC: PhotoCollectionVCDelegate {
+//    func freindsID (user: UserModel) {
+//        userId = user.userId
+//    }
+//}
