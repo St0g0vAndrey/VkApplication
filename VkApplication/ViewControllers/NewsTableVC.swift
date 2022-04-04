@@ -34,9 +34,10 @@ class NewsTableVC: UITableViewController {
         }
 
         let corentNews = collectionNews[indexPath.row]
+        
         cell.configure(photoNews: UIImage(named: corentNews.emblemGroup) ?? UIImage(), titleNews: "Hello",
                        nameGroup: corentNews.nameGroups,
-                       groupEmblem: UIImage(named: corentNews.emblemGroup) ?? UIImage())
+                       groupEmblem: corentNews.emblemGroup)
         return cell
     }
 

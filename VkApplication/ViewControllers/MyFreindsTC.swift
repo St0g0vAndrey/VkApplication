@@ -56,9 +56,8 @@ final class MyFreindsTC: UITableViewController {
         else { return UITableViewCell() }
 
         let freinds = SortedByName(myFreinds)[indexPath.row]
-        let imageView = UIImageView()
-        var image = imageView.kf.setImage(with: URL(string: freinds.userPhoto))
-        cell.configure(emblem: UIImage(named: "\(image)") ?? UIImage(), name: "\(freinds.userFamily) \(freinds.userName)")
+        
+        cell.configure(emblem: freinds.userPhoto, name: "\(freinds.userFamily) \(freinds.userName)")
         
         return cell
     }

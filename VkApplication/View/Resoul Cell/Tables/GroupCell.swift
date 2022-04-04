@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class GroupCell: UITableViewCell {
     @IBOutlet weak var groupName: UILabel!
@@ -14,8 +15,12 @@ final class GroupCell: UITableViewCell {
         animate()
     }
     
-    func configure(emblem: UIImage, name: String){
-        self.groupImage.image = emblem
+    func imageKF (_ url: String) {
+        self.groupImage.kf.setImage(with: URL(string: "\(url)"), placeholder: nil, options: [.transition(.fade(0.1))])
+    }
+    
+    func configure(emblem: String, name: String){
+        imageKF(emblem)
         self.groupName.text = name
     }
     

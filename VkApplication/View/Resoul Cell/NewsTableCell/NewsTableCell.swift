@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsTableCell: UITableViewCell {
 
@@ -14,7 +15,6 @@ class NewsTableCell: UITableViewCell {
     @IBOutlet weak var nameGroup: UILabel!
 
     @IBOutlet weak var groupEmblem: AvatarImage!
-    
     
     @IBOutlet weak var buttonCountLike: UIButton!
     @IBOutlet weak var chatText: UIButton!
@@ -53,11 +53,11 @@ class NewsTableCell: UITableViewCell {
         viewsCountText.setTitle("\(textCount)", for: .normal)
     }
     
-    func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: UIImage) {
+    func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: String) {
         self.photoNews.image = photoNews
         self.titleNews.text = titleNews
         self.nameGroup.text = nameGroup
-        self.groupEmblem.image = groupEmblem
+        imageKF(groupEmblem)
     }
     
     let duration = 2.0
@@ -75,6 +75,10 @@ class NewsTableCell: UITableViewCell {
             } completion: { _ in
                 self.buttonCountLike.transform = .identity
             }
+    }
+    
+    func imageKF(_ url: String) {
+        self.groupEmblem.kf.setImage(with: URL(string: "\(url)"), placeholder: nil, options: [.transition(.fade(0.1))])
     }
     
 //
