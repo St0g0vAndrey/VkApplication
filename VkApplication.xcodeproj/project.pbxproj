@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1730B40528119B2200254E19 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B40428119B2200254E19 /* RealmService.swift */; };
 		35023B16278178740012582B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35023B14278178740012582B /* GroupCell.swift */; };
 		35023B17278178740012582B /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35023B15278178740012582B /* GroupCell.xib */; };
 		352AA4F9279AAEA700FAC6E3 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		090B26E29A9934FC3211E95A /* Pods-VkApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkApplication.release.xcconfig"; path = "Target Support Files/Pods-VkApplication/Pods-VkApplication.release.xcconfig"; sourceTree = "<group>"; };
+		1730B40428119B2200254E19 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		35023B14278178740012582B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		35023B15278178740012582B /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				35DA1A1227BF7B7E00870C61 /* NetworkServiceGroup.swift */,
 				35B97FBA27DA168700F1DF59 /* NetworkServiceUser.swift */,
 				35B97FC327DA271E00F1DF59 /* NetworkServicePhoto.swift */,
+				1730B40428119B2200254E19 /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				35367CA527A64A4B007EF117 /* NewsPost.swift in Sources */,
 				35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */,
+				1730B40528119B2200254E19 /* RealmService.swift in Sources */,
 				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,
 				35B97FB927DA159900F1DF59 /* UserResponse.swift in Sources */,
 				3569092F27B7FC27003A5E11 /* NavigationAnimator.swift in Sources */,
