@@ -7,6 +7,7 @@ target 'VkApplication' do
 
   pod 'Alamofire', '~>5.0'
   pod 'Kingfisher'
+  pod 'RealmSwift'
   
   # Pods for VkApplication
 
