@@ -44,12 +44,12 @@ class NetworkServiceUser {
                     let data = data
             else { return }
             do {
-            let usersResponse = try JSONDecoder().decode(
-                UserResponse.self,
-                from: data)
-                completion(.success(usersResponse.user.items))
+                let usersResponse = try JSONDecoder().decode(
+                    UserResponse.self,
+                    from: data)
+                    completion(.success(usersResponse.user.items))
             } catch {
-                completion(.failure(error))
+                    completion(.failure(error))
             }
         }
         task.resume()

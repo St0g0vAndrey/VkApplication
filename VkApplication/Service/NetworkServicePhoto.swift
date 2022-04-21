@@ -16,17 +16,16 @@ class NetworkServicePhoto {
        var constructor = URLComponents()
         constructor.scheme = "https"
         constructor.host = "api.vk.com"
-        constructor.path = "/method/photos.get"
+        constructor.path = "/method/photos.getAll"
         return constructor
     }()
     
-    func featchUserPhoto(_ userId: Int, completion: @escaping(Result<[UserSizes], Error>) -> Void) {
+    func featchUserPhoto(_ userID: Int, completion: @escaping(Result<[UserSizes], Error>) -> Void) {
         
         var constructor = urlConstructor
         constructor.queryItems = [
             URLQueryItem(name: "access_token", value: "\(SomeSessions.instance.token)"),
-            URLQueryItem(name: "user_id", value: "\(userId)"),
-            URLQueryItem(name: "album_id", value: "profile"),
+            URLQueryItem(name: "owner_id", value: "\(userID)"),
             URLQueryItem(name: "v", value: "5.131")
         ]
         
@@ -43,12 +42,12 @@ class NetworkServicePhoto {
                     let data = data
             else { return }
             do {
-            let photoResponse = try JSONDecoder().decode(
-                UserPhotoResponse.self,
-                from: data)
-                completion(.success(photoResponse.photoResponse.items))
+                let photoResponse = try JSONDecoder().decode(
+                    UserPhotoResponse.self,
+                    from: data)
+                    completion(.success(photoResponse.photoResponse.items))
             } catch {
-                completion(.failure(error))
+                    completion(.failure(error))
             }
         }
         task.resume()

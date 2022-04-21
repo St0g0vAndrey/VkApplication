@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsTableCell: UITableViewCell {
 
@@ -45,6 +46,10 @@ class NewsTableCell: UITableViewCell {
     }
 }
     
+    func imageKF(_ url: String) {
+        self.groupEmblem.kf.setImage(with: URL(string: "\(url)"), placeholder: nil, options: [.transition(.fade(0.1))])
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         buttonCountLike.setTitle("\(textCount)", for: .normal)
@@ -53,11 +58,11 @@ class NewsTableCell: UITableViewCell {
         viewsCountText.setTitle("\(textCount)", for: .normal)
     }
     
-    func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: UIImage) {
+    func configure(photoNews: UIImage, titleNews: String, nameGroup: String, groupEmblem: String) {
         self.photoNews.image = photoNews
         self.titleNews.text = titleNews
         self.nameGroup.text = nameGroup
-        self.groupEmblem.image = groupEmblem
+        imageKF(groupEmblem)
     }
     
     let duration = 2.0

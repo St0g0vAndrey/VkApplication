@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class MyFreindsTC: UITableViewController {
 
@@ -21,10 +22,9 @@ final class MyFreindsTC: UITableViewController {
             }
         }
     }
-    
-    weak var delegate: PhotoCollectionVCDelegate?
+
     private let netWorkUser = NetworkServiceUser()
-    private var myFreinds = [UserModel]() {
+    var myFreinds = [UserModel]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -33,31 +33,31 @@ final class MyFreindsTC: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPhoto" {
-            let ctrl = segue.destination as? PhotoCollectionVC
-            //ctrl.delegate = self
-        }
+        guard segue.identifier == "showPhoto",
+              let destination = segue.destination as? PhotoCollectionVC,
+              let FreindVC = segue.source as? MyFreindsTC,
+              let indexUser = FreindVC.tableView.indexPathForSelectedRow
+        else { return }
+        destination.userId = sortedByName(myFreinds)[indexUser.section].userId
     }
-    
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return myFreinds.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myFreinds.count
+        return alpha()[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
-        else {
-            return UITableViewCell()
-        }
+        else { return UITableViewCell() }
 
-        let freinds = SortedByName(myFreinds)[indexPath.row]
-        cell.configure(emblem: UIImage(named: freinds.userPhoto) ?? UIImage(), name: "\(freinds.userFamily) \(freinds.userName)")
+        let freinds = sortedByName(myFreinds)[indexPath.section]
+        
+        cell.configure(emblem: freinds.userPhoto, name: "\(freinds.userFamily) \(freinds.userName)")
         
         return cell
     }
@@ -65,20 +65,40 @@ final class MyFreindsTC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
-            let user = self.myFreinds[indexPath.row]
-            delegate?.freindsID(user: user)
-            dismiss(animated: true)
         }
         performSegue(withIdentifier: "showPhoto", sender: nil)
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        ["A","B","C","D","E"]
-        //return massArray
+
+        return stride(from: 0, to: alpha().count, by: 1).map { alpha()[$0] }
     }
     
-    private func SortedByName(_ arrayFreind: [UserModel]) -> [UserModel] {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+
+        return alpha()[section]
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        index
+    }
+    
+    //MARK: - Custom Func
+    private func sortedByName(_ arrayFreind: [UserModel]) -> [UserModel] {
         arrayFreind.sorted(by: {$0.userFamily < $1.userFamily})
+    }
+    
+    private func alpha() -> [String] {
+
+        var a = [String]()
+        if sortedByName(myFreinds).count != 0 {
+            for i in 0...sortedByName(myFreinds).count-1 {
+                let m = sortedByName(myFreinds)[i].userFamily
+                let oneNameIndex = String(m[m.index(m.startIndex, offsetBy: 0)])
+                a.append(oneNameIndex)
+            }
+        }
+        return a
     }
     
     /*
@@ -127,9 +147,3 @@ final class MyFreindsTC: UITableViewController {
     */
 }
 
-var userId = 0
-extension MyFreindsTC: PhotoCollectionVCDelegate {
-    func freindsID (user: UserModel) {
-        userId = user.userId
-    }
-}

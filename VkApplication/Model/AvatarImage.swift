@@ -35,47 +35,34 @@ class AvatarBackShadow: UIView {
     }
 }
 
-
 @IBDesignable class UserAvatar: UIView {
     
     var logoView = UIImageView()
     let shadowView = UIView()
     
-    @IBInspectable var shadowRadius: CGFloat = 25.0 {
-        didSet {
-            setNeedsDisplay()
-        }
+    @IBInspectable var shadowRadius: CGFloat = 30.0 {
+        didSet { setNeedsDisplay() }
     }
     
     @IBInspectable var shadowBlur: CGFloat = 6.0 {
-        didSet {
-            setNeedsDisplay()
-        }
+        didSet { setNeedsDisplay() }
     }
 
-
     @IBInspectable var shadowOpacity: Float = 0.3 {
-        didSet {
-            setNeedsDisplay()
-        }
+        didSet { setNeedsDisplay() }
     }
 
     @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 5) {
-        didSet {
-            setNeedsDisplay()
-        }
+        didSet { setNeedsDisplay() }
     }
 
     @IBInspectable var shadowColor: UIColor = UIColor.black {
-        didSet {
-            setNeedsDisplay()
-        }
+        didSet { setNeedsDisplay() }
     }
 
-    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        
+       
         logoView.frame = rect
         logoView.layer.cornerRadius = shadowRadius
         logoView.clipsToBounds = true
@@ -94,12 +81,4 @@ class AvatarBackShadow: UIView {
         shadowView.addSubview(logoView)
         self.addSubview(shadowView)
     }
-    
-    
-    
-    
 }
-
-
-    
-   

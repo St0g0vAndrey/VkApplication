@@ -49,7 +49,7 @@ final class AllGroupTableVC: UITableViewController, UISearchBarDelegate {
             return UITableViewCell()
         }
         let corentGroup = arrayGruop[indexPath.row]
-        cell.configure(emblem: UIImage(named: corentGroup.emblemGroup) ?? UIImage(), name: corentGroup.nameGroups)
+        cell.configure(emblem: corentGroup.emblemGroup, name: corentGroup.nameGroups)
         return cell
     }
     

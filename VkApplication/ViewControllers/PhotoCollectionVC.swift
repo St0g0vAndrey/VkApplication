@@ -7,46 +7,73 @@
 
 import UIKit
 
-final class PhotoCollectionVC: UICollectionViewController {
+class PhotoCollectionVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.register(UINib(nibName: "PhotoCollectionCell", bundle: nil), forCellWithReuseIdentifier: "photoCollectionCell")
+        
+        self.collectionView.register(UINib(
+            nibName: "PhotoCollectionCell",
+            bundle: nil),
+            forCellWithReuseIdentifier: "photoCollectionCell")
+        
         networkService.featchUserPhoto(userId) { [weak self] result in
             switch result {
             case .success(let photo):
-                self?.userCollection = photo
+                self?.userCollection = self?.photoSize(photo, "min") ?? []
+                self?.userFullCollection = self?.photoSize(photo, "max") ??  []
             case .failure(let error):
                 print(error)
             }
         }
     }
-
-    private var userId = 0
-    func freindsID (user: UserModel) {
-        userId = user.userId
+    
+    var userId: Int = 0
+    private let networkService = NetworkServicePhoto()
+    var userFullCollection = [String]()
+    var userCollection = [String]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
     }
     
-    private let networkService = NetworkServicePhoto()
-    var userCollection = [UserSizes]()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "showCollectionFull",
+              let destination = segue.destination as? FullPhotoVC,
+              let photoVC = segue.source as? PhotoCollectionVC,
+              let indexPhotoFull = photoVC.collectionView.indexPathsForSelectedItems?.last?.row
+        else { return }
+        destination.fullPhotoArray = userFullCollection
+        destination.indexImage = indexPhotoFull
+//        destination.image = userFullCollection[indexItems]
+    }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return userCollection[1].sizes.count
+        var user: Int = 0
+        if userCollection.count != 0 {
+            user = userCollection.count
+        }
+        return user
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCollectionCell", for: indexPath) as? PhotoCollectionCell
-        else {
-            return UICollectionViewCell()
-        }
-    
-       let photoUS = userCollection[indexPath.row]
+        else { return UICollectionViewCell() }
         
-        for indexUser in 0...photoUS.sizes.count-1 {
-            cell.configure(photo: UIImage(named: photoUS.sizes[indexUser].photo))
+        var photoItems: String = ""
+        
+        if userCollection.count != 0 {
+            photoItems = userCollection[indexPath.row]
         }
+        
+        cell.configure(photo: photoItems)
         
         return cell
     }
@@ -57,6 +84,31 @@ final class PhotoCollectionVC: UICollectionViewController {
         }
         performSegue(withIdentifier: "showCollectionFull", sender: nil)
     }
+    
+    
+    func photoSize (_ array: [UserSizes],_ size: String) -> [String] {
+        var sortedSizeArray = [String]()
+        
+        switch size {
+            case "min":
+                for i in 0...array.count-1 {
+                    for j in 0...array[i].sizes.count-1 where array[i].sizes[j].width < 80 {
+                        sortedSizeArray.append(array[i].sizes[j].photo)
+                    }
+                }
+            case "max":
+                for i in 0...array.count-1 {
+                    for j in 0...array[i].sizes.count-1 where array[i].sizes[j].width > 1000 && array[i].sizes[j].width < 1300 {
+                        sortedSizeArray.append(array[i].sizes[j].photo)
+                    }
+                }
+        default:
+            break
+        }
+        
+        return sortedSizeArray
+    }
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -87,9 +139,4 @@ final class PhotoCollectionVC: UICollectionViewController {
     
     }
     */
-
-}
-
-protocol PhotoCollectionVCDelegate: class {
-    func freindsID (user: UserModel)
 }

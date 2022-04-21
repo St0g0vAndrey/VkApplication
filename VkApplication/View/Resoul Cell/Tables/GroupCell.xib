@@ -43,6 +43,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="5FI-p2-s4d" secondAttribute="trailing" id="2V0-27-YM1"/>
                             <constraint firstItem="5FI-p2-s4d" firstAttribute="top" secondItem="tFB-EL-uGa" secondAttribute="top" id="2Y2-3q-TsM"/>

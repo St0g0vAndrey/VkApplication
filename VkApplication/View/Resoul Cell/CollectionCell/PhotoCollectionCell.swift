@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PhotoCollectionCell: UICollectionViewCell {
 
@@ -29,9 +30,7 @@ final class PhotoCollectionCell: UICollectionViewCell {
                 buttonLike.setImage(UIImage(systemName: "heart"), for: .normal)
             }
         case false:
-         //  buttonLike.setImage(UIImage(systemName: "heart"), for: .normal)
             break
-            
         }
     }
     
@@ -41,9 +40,13 @@ final class PhotoCollectionCell: UICollectionViewCell {
         buttonLike.setTitle("\(numbertLike)", for: .normal)
     }
     
-    //MARK: - Init
-    func configure(photo: UIImage?) {
-        self.photoCollection.image = photo
+    func imageKF(_ imageUrl: String) {
+        photoCollection.kf.setImage(with: URL(string: imageUrl), placeholder: nil, options: [.transition(.fade(0))])
+//        self.photoCollection.kf.setImage(with: URL(string: "\(imageUrl)"))
     }
-
+    
+    //MARK: - Init
+    func configure(photo: String) {
+        imageKF(photo)
+    }
 }

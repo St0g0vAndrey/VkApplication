@@ -6,16 +6,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FullPhotoVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fullPhotoUser.kf.setImage(with: URL(string: fullPhotoArray[indexImage]))
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var fullPhotoUser: UIImageView!
+//    @IBOutlet weak var fullPhotoUser: UIImageView!
 
+    var fullPhotoArray = [String]()
+    var indexImage: Int = 0
+    var image: String = ""
+    
+    
     /*
     // MARK: - Navigation
 
