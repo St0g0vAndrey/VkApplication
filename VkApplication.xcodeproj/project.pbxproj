@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1730B40528119B2200254E19 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B40428119B2200254E19 /* RealmService.swift */; };
+		1797012F28155C91006874CE /* RealmGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797012E28155C91006874CE /* RealmGroup.swift */; };
 		35023B16278178740012582B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35023B14278178740012582B /* GroupCell.swift */; };
 		35023B17278178740012582B /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35023B15278178740012582B /* GroupCell.xib */; };
 		352AA4F9279AAEA700FAC6E3 /* AvatarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		090B26E29A9934FC3211E95A /* Pods-VkApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkApplication.release.xcconfig"; path = "Target Support Files/Pods-VkApplication/Pods-VkApplication.release.xcconfig"; sourceTree = "<group>"; };
 		1730B40428119B2200254E19 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		1797012E28155C91006874CE /* RealmGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGroup.swift; sourceTree = "<group>"; };
 		35023B14278178740012582B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		35023B15278178740012582B /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		352AA4F8279AAEA700FAC6E3 /* AvatarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImage.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1797012D28155C4D006874CE /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1797012E28155C91006874CE /* RealmGroup.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		35023B12278177E30012582B /* Resoul Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +271,7 @@
 		35EDFC5727870E5D00EE8DAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1797012D28155C4D006874CE /* Realm */,
 				35B97FBC27DA23BC00F1DF59 /* ModelUserPhotoCollection */,
 				35B97FB527DA0E8500F1DF59 /* Model User */,
 				35B97FB427DA0E3600F1DF59 /* Model Group */,
@@ -415,6 +426,7 @@
 				3557A79A27D2526000B7428C /* GroupModelResponse.swift in Sources */,
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				35367CA527A64A4B007EF117 /* NewsPost.swift in Sources */,
+				1797012F28155C91006874CE /* RealmGroup.swift in Sources */,
 				35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */,
 				1730B40528119B2200254E19 /* RealmService.swift in Sources */,
 				353755282779F64B002A5CC8 /* MyGroupsTableVC.swift in Sources */,

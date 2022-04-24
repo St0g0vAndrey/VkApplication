@@ -9,12 +9,14 @@ import UIKit
 import SwiftUI
 
 struct GroupModel {
+    let idGroup: Int
     let nameGroups: String
     let emblemGroup: String
 }
 
 extension GroupModel: Codable {
     enum CodingKeys: String, CodingKey {
+        case idGroup = "id"
         case nameGroups = "name"
         case emblemGroup = "photo_50"
     }
