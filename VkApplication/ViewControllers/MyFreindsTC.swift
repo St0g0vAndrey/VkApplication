@@ -12,7 +12,7 @@ final class MyFreindsTC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "groupCell")
+        tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "userCell")
         netWorkUser.featchUser { [weak self] result in
             switch result {
             case .success(let myFreinds):
@@ -52,7 +52,7 @@ final class MyFreindsTC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath) as? UserCell
         else { return UITableViewCell() }
 
         let freinds = sortedByName(myFreinds)[indexPath.section]

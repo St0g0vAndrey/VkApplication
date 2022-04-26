@@ -11,7 +11,7 @@ class NewsTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "NewsTableCell", bundle: nil), forCellReuseIdentifier: "newsTableCell")
+        tableView.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: "newsCell")
     }
     
     // MARK: - Table view data source
@@ -21,20 +21,18 @@ class NewsTableVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        collectionNews.count
+        1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "newsTableCell", for: indexPath) as? NewsTableCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as? NewsCell
         else {
             return UITableViewCell()
         }
 
-        let corentNews = collectionNews[indexPath.row]
-        cell.configure(photoNews: UIImage(named: corentNews.emblemGroup) ?? UIImage(), titleNews: "Hello",
-                       nameGroup: corentNews.nameGroups,
-                       groupEmblem: corentNews.emblemGroup)
+//        let corentNews = collectionNews[indexPath.row]
+        cell.configure("https://vse-kursy.com/uploads/vk/2101/bf_3662_r3u96e800_73550_1.jpg")
         return cell
     }
 

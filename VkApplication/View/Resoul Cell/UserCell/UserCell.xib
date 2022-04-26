@@ -53,7 +53,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="162" y="118"/>
+            <connections>
+                <outlet property="userName" destination="s2Z-Tf-8ka" id="0ui-vP-deZ"/>
+                <outlet property="userPhoto" destination="E8X-a6-4pj" id="yN7-lm-0Qr"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="41.852678571428569"/>
         </tableViewCell>
     </objects>
     <resources>

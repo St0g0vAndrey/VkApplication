@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172506962818316300768BE0 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172506942818316300768BE0 /* NewsCell.swift */; };
+		172506972818316300768BE0 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 172506952818316300768BE0 /* NewsCell.xib */; };
 		1730B40528119B2200254E19 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1730B40428119B2200254E19 /* RealmService.swift */; };
 		177D94E1281828B600D7BD60 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177D94DF281828B600D7BD60 /* UserCell.swift */; };
 		177D94E2281828B600D7BD60 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177D94E0281828B600D7BD60 /* UserCell.xib */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		090B26E29A9934FC3211E95A /* Pods-VkApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VkApplication.release.xcconfig"; path = "Target Support Files/Pods-VkApplication/Pods-VkApplication.release.xcconfig"; sourceTree = "<group>"; };
+		172506942818316300768BE0 /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		172506952818316300768BE0 /* NewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		1730B40428119B2200254E19 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		177D94DF281828B600D7BD60 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		177D94E0281828B600D7BD60 /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		172506932818313500768BE0 /* NewsGroupCell */ = {
+			isa = PBXGroup;
+			children = (
+				172506942818316300768BE0 /* NewsCell.swift */,
+				172506952818316300768BE0 /* NewsCell.xib */,
+			);
+			path = NewsGroupCell;
+			sourceTree = "<group>";
+		};
 		177D94DE2818289300D7BD60 /* UserCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		35023B12278177E30012582B /* Resoul Cell */ = {
 			isa = PBXGroup;
 			children = (
+				172506932818313500768BE0 /* NewsGroupCell */,
 				177D94DE2818289300D7BD60 /* UserCell */,
 				35EDFC4D2786F09600EE8DAC /* CollectionCell */,
 				35023B13278177F50012582B /* GroupsCell */,
@@ -362,6 +376,7 @@
 			files = (
 				352ADA93276DCE750009C658 /* LaunchScreen.storyboard in Resources */,
 				35EDFC552786F15C00EE8DAC /* PhotoCollectionCell.xib in Resources */,
+				172506972818316300768BE0 /* NewsCell.xib in Resources */,
 				177D94E2281828B600D7BD60 /* UserCell.xib in Resources */,
 				352ADA8E276DCE720009C658 /* Main.storyboard in Resources */,
 				35D258DB27AD785B0042AB61 /* Assets.xcassets in Resources */,
@@ -428,6 +443,7 @@
 				3537552A2779F68C002A5CC8 /* PhotoCollectionVC.swift in Sources */,
 				177D94E1281828B600D7BD60 /* UserCell.swift in Sources */,
 				35367CA527A64A4B007EF117 /* NewsPost.swift in Sources */,
+				172506962818316300768BE0 /* NewsCell.swift in Sources */,
 				1797012F28155C91006874CE /* RealmGroup.swift in Sources */,
 				35EDFC542786F15C00EE8DAC /* PhotoCollectionCell.swift in Sources */,
 				1730B40528119B2200254E19 /* RealmService.swift in Sources */,

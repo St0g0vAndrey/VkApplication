@@ -10,7 +10,7 @@ import Kingfisher
 
 class UserCell: UITableViewCell {
 
-    @IBOutlet weak var userPhoto: UIImageView!
+    @IBOutlet weak var userPhoto: AvatarImage!
     @IBOutlet weak var userName: UILabel!
 
     }
