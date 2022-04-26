@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import RealmSwift
 
 final class MyGroupsTableVC: UITableViewController {
   
@@ -18,46 +19,50 @@ final class MyGroupsTableVC: UITableViewController {
         networkService.featchUser { [weak self] result in
             switch result {
             case .success(let myGroups):
-                self?.myGroup = myGroups
+                let realmGroups = myGroups.map { RealmGroup(groupM: $0) }
+                DispatchQueue.main.async {
+                    do {
+                        try RealmService.save(items: realmGroups)
+                    } catch {
+                        print(error)
+                    }
+                }
+//                self?.myGroup = myGroups
             case .failure(let error):
                 print(error)
             }
         }
     }
     
+    private var groups: Results<RealmGroup>?
     private let networkService = NetworkServiceGroup()
-    private var myGroup = [GroupModel]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     
-    @IBAction func addGroupsSegue(segue: UIStoryboardSegue) {
-        guard segue.identifier == "addGroups",
-              let allGroupController = segue.source as? AllGroupTableVC,
-              let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
-              !self.myGroup.contains(where: {$0.nameGroups == allGroupController.arrayGruop[groupIndex.row].nameGroups})
-        else { return }
-            self.myGroup.append(allGroupController.arrayGruop[groupIndex.row])
-            tableView.reloadData()
-    }
+    //MARK: - Transaction is ALLGroup
+    
+//    @IBAction func addGroupsSegue(segue: UIStoryboardSegue) {
+//        guard segue.identifier == "addGroups",
+//              let allGroupController = segue.source as? AllGroupTableVC,
+//              let groupIndex = allGroupController.tableView.indexPathForSelectedRow,
+//              !self.myGroup.contains(where: {$0.nameGroups == allGroupController.arrayGruop[groupIndex.row].nameGroups})
+//        else { return }
+//            self.myGroup.append(allGroupController.arrayGruop[groupIndex.row])
+//            tableView.reloadData()
+//    }
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myGroup.count
+        return groups?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
+            let corentGroup = groups?[indexPath.row],
+            let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as? GroupCell
         else {
             return UITableViewCell()
         }
         
-        let corentGroup = myGroup[indexPath.row]
-        cell.configure(emblem: corentGroup.emblemGroup, name: corentGroup.nameGroups)
+        cell.configure(corentGroup)
 
         return cell
     }
@@ -70,12 +75,13 @@ final class MyGroupsTableVC: UITableViewController {
     }
     */
 
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            myGroup.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            RealmService.delete(obj: groups[in])
+////            myGroup.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
 
     /*
     // Override to support rearranging the table view.
@@ -91,15 +97,4 @@ final class MyGroupsTableVC: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

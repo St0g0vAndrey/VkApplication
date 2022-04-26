@@ -19,9 +19,9 @@ class GroupCell: UITableViewCell {
         self.groupImage.kf.setImage(with: URL(string: "\(url)"), placeholder: nil, options: [.transition(.fade(0.1))])
     }
     
-    func configure(emblem: String, name: String){
-        imageKF(emblem)
-        self.groupName.text = name
+    func configure(_ groups: RealmGroup){
+        imageKF(groups.emblem)
+        self.groupName.text = groups.nameGroup
     }
     
     let duration = 1.7

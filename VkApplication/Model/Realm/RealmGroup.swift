@@ -10,14 +10,16 @@ import RealmSwift
 
 class RealmGroup: Object {
     @Persisted(primaryKey: true) var id: ObjectId
+    @Persisted(indexed: true) var nameGroup: String = ""
     @Persisted var idGroupRealm: Int = 0
-    @Persisted var nameGroup: String = ""
     @Persisted var emblem: String = ""
 }
 
-/*
- struct GroupModel {
-     let idGroup: Int
-     let nameGroups: String
-     let emblemGroup: String
- */
+extension RealmGroup {
+    convenience init(groupM: GroupModel) {
+        self.init()
+        self.nameGroup = groupM.nameGroups
+        self.idGroupRealm = groupM.idGroup
+        self.emblem = groupM.emblemGroup
+    }
+}

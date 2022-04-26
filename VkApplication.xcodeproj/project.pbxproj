@@ -119,18 +119,18 @@
 			children = (
 				35367CA127A6370F007EF117 /* NewsTableCell */,
 				35EDFC4D2786F09600EE8DAC /* CollectionCell */,
-				35023B13278177F50012582B /* Tables */,
+				35023B13278177F50012582B /* GroupsCell */,
 			);
 			path = "Resoul Cell";
 			sourceTree = "<group>";
 		};
-		35023B13278177F50012582B /* Tables */ = {
+		35023B13278177F50012582B /* GroupsCell */ = {
 			isa = PBXGroup;
 			children = (
 				35023B14278178740012582B /* GroupCell.swift */,
 				35023B15278178740012582B /* GroupCell.xib */,
 			);
-			path = Tables;
+			path = GroupsCell;
 			sourceTree = "<group>";
 		};
 		352ADA7A276DCE720009C658 = {
@@ -333,6 +333,7 @@
 				TargetAttributes = {
 					352ADA82276DCE720009C658 = {
 						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -596,6 +597,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT63PMVH52;
@@ -615,6 +617,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StudentGeekBreans.VkApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VkApplication/View/Resoul Cell/UserTableCell/VkApplication-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -626,6 +630,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AT63PMVH52;
@@ -645,6 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = StudentGeekBreans.VkApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "VkApplication/View/Resoul Cell/UserTableCell/VkApplication-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
