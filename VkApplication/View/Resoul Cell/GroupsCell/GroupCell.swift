@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class GroupCell: UITableViewCell {
+   
     @IBOutlet weak var groupName: UILabel!
     @IBOutlet weak var groupImage: AvatarImage!
     @IBAction func buttonImageProcess(_ sender: UIButton) {

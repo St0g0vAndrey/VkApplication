@@ -13,8 +13,6 @@ class NewsTableVC: UITableViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "NewsTableCell", bundle: nil), forCellReuseIdentifier: "newsTableCell")
     }
-
-    var collectionNews = [GroupModel(nameGroups: "GeekBrains", emblemGroup: "https://sun1-56.userapi.com/s/v1/ig2/Z-aPt8MPvgStrmjfCwo-WPK7jrMdYoNUhCbpYgj93XAEZmeVnhMNsfnSVDzdguEzVff4BZfxcC_K87kje-d5L_n9.jpg?size=50x50&quality=95&crop=256,256,2046,2046&ava=1")]
     
     // MARK: - Table view data source
 
